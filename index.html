@@ -4,145 +4,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baby Shower de Eliena</title>
+  <title>Baby Shower de Eliana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       background-color: #f1eddc;
       color: #5a673b;
-      scroll-behavior: smooth;
     }
-
-    h1, h2, h3 {
+    h1, h2 {
       font-family: 'Playfair Display', serif;
     }
-
     section {
-      padding: 60px 20px;
+      padding: 50px 20px;
       text-align: center;
     }
-
     .hero {
-      background-color: #ede5c2;
-      background-image: url('https://i.imgur.com/G2mtKyb.png'); /* Reemplazable */
-      background-size: cover;
-      background-position: center;
+      background: #f1eddc;
+      padding: 100px 20px 60px;
+    }
+    .hero h1 {
+      font-size: 2em;
+      margin: 20px 0 0;
       color: #8e7f57;
     }
-
-    .hero h1 {
-      font-size: 2.5em;
-      margin: 0;
+    .hero h2 {
+      font-size: 1.6em;
+      margin: 10px 0;
+      color: #dc9f92;
     }
-
-    .frase {
-      font-size: 1.2em;
+    .welcome {
+      background-color: #ede5c2;
+      padding: 60px 20px;
+    }
+    .welcome h2 {
+      color: #8e7f57;
+      font-size: 1.8em;
+    }
+    .welcome p {
       font-style: italic;
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: auto;
+    }
+    .event-details {
+      background-color: #f1eddc;
+    }
+    .event-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      width: 200px;
+    }
+    .card h3 {
+      margin-top: 10px;
+      color: #8e7f57;
+    }
+    .botones {
       margin-top: 20px;
     }
-
-    .detalle-evento {
-      background-color: #ebc7ad;
-    }
-
-    .detalle-evento p {
-      font-size: 1.1em;
-    }
-
-    .icono {
-      font-size: 1.5em;
-      margin-right: 8px;
-    }
-
-    .boton {
+    .btn {
       display: inline-block;
-      margin: 15px 10px;
-      padding: 12px 24px;
+      margin: 10px;
+      padding: 12px 20px;
       border-radius: 30px;
-      background-color: #dc9f92;
-      color: white;
-      text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
+      text-decoration: none;
+      color: white;
     }
-
-    .boton:hover {
-      background-color: #b97e76;
+    .btn-cal {
+      background-color: #dc9f92;
     }
-
-    .galeria {
-      background-color: #d0caa9;
+    .btn-map {
+      background-color: #a7b67a;
     }
-
-    .galeria img {
-      max-width: 90%;
-      border-radius: 15px;
-      margin: 15px 0;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    .btn-rsvp {
+      background-color: #dc9f92;
     }
-
-    .agradecimiento {
+    .gifts {
       background-color: #ede5c2;
+    }
+    .gift-box {
+      background: white;
+      border-radius: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .gifts p {
+      margin: 20px 0;
       font-size: 1.1em;
     }
-
-    footer {
-      padding: 30px;
-      font-size: 0.9em;
+    .thanks {
+      background-color: #f1eddc;
+    }
+    .thanks h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .contact-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .contact {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      width: 180px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .contact h4 {
       color: #8e7f57;
+      margin: 10px 0 5px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado -->
   <section class="hero">
-    <h1>Baby Shower de Eliena Salas Matarrita</h1>
-    <p class="frase">Gracias por acompañarnos en este momento tan especial</p>
+    <div><img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/null/external-baby-mobile-nursery-flat-icons-inmotus-design.png"/></div>
+    <h1>Baby Shower de</h1>
+    <h2>Eliana Salas Matarrita</h2>
   </section>
 
-  <!-- Detalles del evento -->
-  <section class="detalle-evento">
+  <section class="hero">
+    <img src="perezosa.png" alt="Perezosa decorativa" style="max-width: 200px; margin-bottom: 20px;" />
+    <h1>Baby Shower de</h1>
+    <h2>Eliana Salas Matarrita</h2>
+  </section>
+
+  <section class="welcome">
+    <h2>Bienvenidos</h2>
+    <p>"Gracias por acompañarnos en este momento tan especial.  
+    Cada pequeña huella en nuestro camino nos llena de alegría mientras esperamos con amor la llegada de nuestra pequeña Eliana."</p>
+  </section>
+
+  <section class="event-details">
     <h2>Detalles del Evento</h2>
-    <p><span class="icono">📅</span> Sábado 02 de agosto, 2025</p>
-    <p><span class="icono">⏰</span> 11:00 a.m.</p>
-    <p><span class="icono">📍</span> Casa Favanú, Esparza</p>
-    <div>
-      <a class="boton" href="https://calendar.google.com/calendar/ical/6efbf2d972aac39f356ac8f18be4d3e018320839ab935006323474a15a70d3d6%40group.calendar.google.com/private-5cbcdfd6ed9e8cfa8e4a0e7f87ffa77c/basic.ics" target="_blank">Agendar en Calendario</a>
-      <a class="boton" href="https://maps.app.goo.gl/WZKwy8SnpfedyXm56" target="_blank">Ver Ubicación</a>
+    <div class="event-cards">
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/50/8e7f57/calendar.png"/>
+        <h3>Fecha</h3>
+        <p>02 Agosto, 2025</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/50/8e7f57/clock.png"/>
+        <h3>Hora</h3>
+        <p>11:00 AM</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/50/8e7f57/marker.png"/>
+        <h3>Lugar</h3>
+        <p>Casa Favanú, Esparza</p>
+      </div>
+    </div>
+    <div class="botones">
+      <a class="btn btn-cal" href="https://calendar.google.com/calendar/ical/6efbf2d972aac39f356ac8f18be4d3e018320839ab935006323474a15a70d3d6%40group.calendar.google.com/private-5cbcdfd6ed9e8cfa8e4a0e7f87ffa77c/basic.ics" target="_blank">📅 Agendar Evento</a>
+      <a class="btn btn-map" href="https://maps.app.goo.gl/WZKwy8SnpfedyXm56" target="_blank">🗺️ Ver Ubicación</a>
+      <a class="btn btn-rsvp" href="https://forms.gle/iKEZM47NPxpLWSKJ9" target="_blank">✅ Confirmar Asistencia</a>
     </div>
   </section>
 
-  <!-- Confirmación de asistencia -->
-  <section>
-    <h2>¿Vas a venir?</h2>
-    <a class="boton" href="https://forms.gle/iKEZM47NPxpLWSKJ9" target="_blank">Confirmar asistencia</a>
+  <section class="gifts">
+    <h2>Ideas de Regalos</h2>
+    <div class="gift-box">
+      <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/8e7f57/external-gift-wedding-flatart-icons-outline-flatarticons.png"/>
+      <p>Si deseas hacernos un regalo para nuestra pequeña Eliana, aquí encontrarás algunas ideas que nos encantarían.</p>
+      <a class="btn btn-map" href="https://forms.gle/xkJwnZmLdafjQpGs6" target="_blank">🎁 Ver Ideas de Regalos</a>
+    </div>
   </section>
 
-  <!-- Regalos -->
-  <section>
-    <h2>Ideas de Regalo</h2>
-    <p>¿Deseás traer un detalle? Aquí podés ver algunas ideas de regalo.</p>
-    <a class="boton" href="https://forms.gle/xkJwnZmLdafjQpGs6" target="_blank">Ver lista de regalos</a>
+  <section class="thanks">
+    <h2>¡Gracias por acompañarnos!</h2>
+    <p>Tu presencia hará de este día un momento aún más especial para nuestra familia. Si tienes alguna duda, no dudes en contactarnos.</p>
+    <div class="contact-boxes">
+      <div class="contact">
+        <img src="https://img.icons8.com/ios-filled/50/8e7f57/user.png"/>
+        <h4>Contacto</h4>
+        <p>Kenneth Salas</p>
+      </div>
+      <div class="contact">
+        <img src="https://img.icons8.com/ios-filled/50/8e7f57/phone.png"/>
+        <h4>Teléfono</h4>
+        <p>8799-6111</p>
+      </div>
+    </div>
   </section>
-
-  <!-- Galería o Imagen -->
-  <section class="galeria">
-    <h2>Inspiración del Evento</h2>
-    <img src="https://i.imgur.com/lKSTkTf.jpg" alt="Decoración temática Baby Shower"/>
-  </section>
-
-  <!-- Agradecimiento -->
-  <section class="agradecimiento">
-    <h2>¡Gracias!</h2>
-    <p>Gracias por ser parte de este momento tan especial. ¡Esperamos compartir juntos un día lleno de amor y ternura!</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    Contacto: Kenneth Salas · Tel: 8799-6111
-  </footer>
 
 </body>
 </html>
