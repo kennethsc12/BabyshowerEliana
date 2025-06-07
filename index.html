@@ -1,208 +1,641 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baby Shower de Eliana</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f1eddc;
-      color: #5a673b;
-    }
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-    }
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .hero {
-      background: #f1eddc;
-      padding: 100px 20px 60px;
-    }
-    .hero h1 {
-      font-size: 2em;
-      margin: 20px 0 0;
-      color: #8e7f57;
-    }
-    .hero h2 {
-      font-size: 1.6em;
-      margin: 10px 0;
-      color: #dc9f92;
-    }
-    .welcome {
-      background-color: #ede5c2;
-      padding: 60px 20px;
-    }
-    .welcome h2 {
-      color: #8e7f57;
-      font-size: 1.8em;
-    }
-    .welcome p {
-      font-style: italic;
-      font-size: 1.1em;
-      max-width: 600px;
-      margin: auto;
-    }
-    .event-details {
-      background-color: #f1eddc;
-    }
-    .event-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin: 30px 0;
-    }
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-      width: 200px;
-    }
-    .card h3 {
-      margin-top: 10px;
-      color: #8e7f57;
-    }
-    .botones {
-      margin-top: 20px;
-    }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-    }
-    .btn-cal {
-      background-color: #dc9f92;
-    }
-    .btn-map {
-      background-color: #a7b67a;
-    }
-    .btn-rsvp {
-      background-color: #dc9f92;
-    }
-    .gifts {
-      background-color: #ede5c2;
-    }
-    .gift-box {
-      background: white;
-      border-radius: 15px;
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .gifts p {
-      margin: 20px 0;
-      font-size: 1.1em;
-    }
-    .thanks {
-      background-color: #f1eddc;
-    }
-    .thanks h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-    .contact-boxes {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-    .contact {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      width: 180px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }
-    .contact h4 {
-      color: #8e7f57;
-      margin: 10px 0 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower de Eliana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige-claro: #f1eddc;
+            --marron-medio: #8e7f57;
+            --beige-marron: #d0caa9;
+            --verde-oliva: #a7b67a;
+            --rosa-apagado: #dc9f92;
+            --amarillo-palido: #ede5c2;
+            --verde-oscuro: #5a673b;
+            --durazno-suave: #ebc7ad;
+            --dorado: #d4af37;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--beige-claro);
+            color: var(--marron-medio);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--rosa-apagado);
+            color: white;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary:hover {
+            background-color: white;
+            color: var(--rosa-apagado);
+            border: 2px solid var(--rosa-apagado);
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--verde-oliva);
+            color: white;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--verde-oliva);
+            border: 2px solid var(--verde-oliva);
+            transform: translateY(-3px);
+        }
+        
+        .section {
+            padding: 4rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gold-accent {
+            color: var(--dorado);
+        }
+        
+        .border-decoration {
+            border: 15px solid white;
+            box-shadow: 0 0 20px rgba(142, 127, 87, 0.2);
+            position: relative;
+        }
+        
+        .border-decoration::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid var(--durazno-suave);
+            z-index: -1;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.4;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .twinkle {
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--beige-marron);
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active, .nav-dot:hover {
+            background-color: var(--rosa-apagado);
+            transform: scale(1.2);
+        }
+        
+        .side-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+        
+        .info-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(142, 127, 87, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--rosa-apagado);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(142, 127, 87, 0.15);
+        }
+        
+        .icon-circle {
+            background-color: var(--amarillo-palido);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--verde-oscuro);
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(142, 127, 87, 0.1);
+        }
+        
+        .leaf {
+            position: absolute;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        .leaf-1 {
+            top: 10%;
+            left: 5%;
+            transform: rotate(-15deg);
+        }
+        
+        .leaf-2 {
+            top: 30%;
+            right: 5%;
+            transform: rotate(15deg);
+        }
+        
+        .leaf-3 {
+            bottom: 20%;
+            left: 10%;
+            transform: rotate(30deg);
+        }
+        
+        .cloud {
+            position: absolute;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        
+        .cloud-1 {
+            top: 15%;
+            left: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .cloud-2 {
+            top: 25%;
+            right: 15%;
+            animation: float 12s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+        
+        .star {
+            position: absolute;
+            opacity: 0.8;
+            z-index: -1;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        
+        .star-1 {
+            top: 20%;
+            left: 20%;
+        }
+        
+        .star-2 {
+            top: 15%;
+            right: 25%;
+            animation-delay: 1s;
+        }
+        
+        .star-3 {
+            top: 35%;
+            right: 40%;
+            animation-delay: 2s;
+        }
+        
+        .flower {
+            position: absolute;
+            opacity: 0.9;
+            z-index: -1;
+        }
+        
+        .flower-1 {
+            bottom: 15%;
+            left: 8%;
+        }
+        
+        .flower-2 {
+            bottom: 20%;
+            right: 8%;
+        }
+        
+        .rainbow {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 2s ease-in-out infinite;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .decorative-element {
+            margin: 2rem auto;
+            max-width: 200px;
+        }
+        
+        .contact-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(142, 127, 87, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--verde-oliva);
+            display: inline-block;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(142, 127, 87, 0.15);
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: white;
+            color: #25D366;
+            border: 2px solid #25D366;
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 <body>
-
-  <section class="hero">
-    <div><img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/null/external-baby-mobile-nursery-flat-icons-inmotus-design.png"/></div>
-    <h1>Baby Shower de</h1>
-    <h2>Eliana Salas Matarrita</h2>
-  </section>
-
-  <section class="hero">
-    <img src="perezosa.png" alt="Perezosa decorativa" style="max-width: 200px; margin-bottom: 20px;" />
-    <h1>Baby Shower de</h1>
-    <h2>Eliana Salas Matarrita</h2>
-  </section>
-
-  <section class="welcome">
-    <h2>Bienvenidos</h2>
-    <p>"Gracias por acompañarnos en este momento tan especial.  
-    Cada pequeña huella en nuestro camino nos llena de alegría mientras esperamos con amor la llegada de nuestra pequeña Eliana."</p>
-  </section>
-
-  <section class="event-details">
-    <h2>Detalles del Evento</h2>
-    <div class="event-cards">
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/50/8e7f57/calendar.png"/>
-        <h3>Fecha</h3>
-        <p>02 Agosto, 2025</p>
-      </div>
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/50/8e7f57/clock.png"/>
-        <h3>Hora</h3>
-        <p>11:00 AM</p>
-      </div>
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/50/8e7f57/marker.png"/>
-        <h3>Lugar</h3>
-        <p>Casa Favanú, Esparza</p>
-      </div>
+    <!-- Side Navigation -->
+    <div class="side-nav hidden lg:block">
+        <div class="nav-dot active" data-section="header"></div>
+        <div class="nav-dot" data-section="welcome"></div>
+        <div class="nav-dot" data-section="details"></div>
+        <div class="nav-dot" data-section="gifts"></div>
+        <div class="nav-dot" data-section="thanks"></div>
     </div>
-    <div class="botones">
-      <a class="btn btn-cal" href="https://calendar.google.com/calendar/ical/6efbf2d972aac39f356ac8f18be4d3e018320839ab935006323474a15a70d3d6%40group.calendar.google.com/private-5cbcdfd6ed9e8cfa8e4a0e7f87ffa77c/basic.ics" target="_blank">📅 Agendar Evento</a>
-      <a class="btn btn-map" href="https://maps.app.goo.gl/WZKwy8SnpfedyXm56" target="_blank">🗺️ Ver Ubicación</a>
-      <a class="btn btn-rsvp" href="https://forms.gle/iKEZM47NPxpLWSKJ9" target="_blank">✅ Confirmar Asistencia</a>
-    </div>
-  </section>
 
-  <section class="gifts">
-    <h2>Ideas de Regalos</h2>
-    <div class="gift-box">
-      <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/8e7f57/external-gift-wedding-flatart-icons-outline-flatarticons.png"/>
-      <p>Si deseas hacernos un regalo para nuestra pequeña Eliana, aquí encontrarás algunas ideas que nos encantarían.</p>
-      <a class="btn btn-map" href="https://forms.gle/xkJwnZmLdafjQpGs6" target="_blank">🎁 Ver Ideas de Regalos</a>
-    </div>
-  </section>
+    <!-- Header Section -->
+    <section id="header" class="section min-h-screen flex items-center justify-center relative">
+        <!-- Decorative elements -->
+        <div class="cloud cloud-1">
+            <svg width="120" height="80" viewBox="0 0 120 80" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30,60 Q10,65 10,50 Q10,35 25,35 Q25,10 50,10 Q80,10 80,35 Q95,25 105,35 Q120,45 110,60 Q100,70 80,65 Q70,75 50,70 Q35,70 30,60 Z" />
+            </svg>
+        </div>
+        <div class="cloud cloud-2">
+            <svg width="100" height="60" viewBox="0 0 100 60" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25,50 Q8,54 8,42 Q8,30 20,30 Q20,8 42,8 Q67,8 67,30 Q80,21 88,30 Q100,38 92,50 Q84,58 67,54 Q59,63 42,58 Q30,58 25,50 Z" />
+            </svg>
+        </div>
+        <div class="star star-1">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="#d4af37" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,0 L13,7 L20,7 L14,12 L16,20 L10,15 L4,20 L6,12 L0,7 L7,7 Z" />
+            </svg>
+        </div>
+        <div class="star star-2">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="#d4af37" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5,0 L9.75,5.25 L15,5.25 L10.5,9 L12,15 L7.5,11.25 L3,15 L4.5,9 L0,5.25 L5.25,5.25 Z" />
+            </svg>
+        </div>
+        <div class="star star-3">
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="#d4af37" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.5,0 L16.25,8.75 L25,8.75 L17.5,15 L20,25 L12.5,18.75 L5,25 L7.5,15 L0,8.75 L8.75,8.75 Z" />
+            </svg>
+        </div>
+        
+        <div class="leaf leaf-1">
+            <svg width="100" height="150" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50,0 C80,50 100,100 50,150 C0,100 20,50 50,0 Z" fill="#a7b67a" opacity="0.6" />
+                <path d="M50,20 C70,60 80,100 50,130 C20,100 30,60 50,20 Z" fill="#5a673b" opacity="0.3" />
+            </svg>
+        </div>
+        
+        <div class="leaf leaf-2">
+            <svg width="100" height="150" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50,0 C80,50 100,100 50,150 C0,100 20,50 50,0 Z" fill="#a7b67a" opacity="0.6" />
+                <path d="M50,20 C70,60 80,100 50,130 C20,100 30,60 50,20 Z" fill="#5a673b" opacity="0.3" />
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-4 text-center">
+            <div class="border-decoration bg-white p-10 md:p-16 inline-block rounded-lg">
+                <div class="mb-6">
+                    <!-- Imagen de la perezosa -->
+                      <img src="Perezosa.png" alt="Imagen de perezosa" class="mx-auto w-48 md:w-60 floating">
+                  </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#8e7f57]">Baby Shower de</h1>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#dc9f92]">Eliana Salas Matarrita</h1>
+                <div class="w-32 h-1 bg-[#d4af37] mx-auto"></div>
+            </div>
+            
+            <div class="scroll-down" id="scrollDown">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="19" stroke="#dc9f92" stroke-width="2" fill="white" />
+                    <path d="M12,18 L20,26 L28,18" stroke="#dc9f92" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </section>
 
-  <section class="thanks">
-    <h2>¡Gracias por acompañarnos!</h2>
-    <p>Tu presencia hará de este día un momento aún más especial para nuestra familia. Si tienes alguna duda, no dudes en contactarnos.</p>
-    <div class="contact-boxes">
-      <div class="contact">
-        <img src="https://img.icons8.com/ios-filled/50/8e7f57/user.png"/>
-        <h4>Contacto</h4>
-        <p>Kenneth Salas</p>
-      </div>
-      <div class="contact">
-        <img src="https://img.icons8.com/ios-filled/50/8e7f57/phone.png"/>
-        <h4>Teléfono</h4>
-        <p>8799-6111</p>
-      </div>
-    </div>
-  </section>
+    <!-- Welcome Section -->
+    <section id="welcome" class="section py-20 bg-[#ede5c2] relative">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-[#8e7f57]">Bienvenidos</h2>
+                <p class="text-xl md:text-2xl italic mb-8 text-[#5a673b]">"Gracias por acompañarnos en este momento tan especial. Cada pequeña huella en nuestro camino nos llena de alegría mientras esperamos con amor la llegada de nuestra pequeña Eliana."</p>
+                <div class="flex justify-center">
+                    <svg width="150" height="30" viewBox="0 0 150 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0,15 Q37.5,0 75,15 Q112.5,30 150,15" stroke="#dc9f92" stroke-width="2" fill="none" />
+                        <circle cx="75" cy="15" r="5" fill="#dc9f92" />
+                        <circle cx="35" cy="10" r="3" fill="#dc9f92" />
+                        <circle cx="115" cy="10" r="3" fill="#dc9f92" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="flower flower-1">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="10" fill="#ebc7ad" />
+                <ellipse cx="40" cy="20" rx="10" ry="15" fill="#dc9f92" />
+                <ellipse cx="40" cy="60" rx="10" ry="15" fill="#dc9f92" />
+                <ellipse cx="20" cy="40" rx="15" ry="10" fill="#dc9f92" />
+                <ellipse cx="60" cy="40" rx="15" ry="10" fill="#dc9f92" />
+            </svg>
+        </div>
+    </section>
 
+    <!-- Event Details Section -->
+    <section id="details" class="section py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-[#8e7f57]">Detalles del Evento</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="info-card flex flex-col items-center text-center">
+                    <div class="icon-circle">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-[#8e7f57]">Fecha</h3>
+                    <p class="text-lg">02 Agosto, 2025</p>
+                </div>
+                
+                <div class="info-card flex flex-col items-center text-center">
+                    <div class="icon-circle">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-[#8e7f57]">Hora</h3>
+                    <p class="text-lg">10:00 AM</p>
+                </div>
+                
+                <div class="info-card flex flex-col items-center text-center">
+                    <div class="icon-circle">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-[#8e7f57]">Lugar</h3>
+                    <p class="text-lg">Casa Favanú, Esparza</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-12">
+                <a href="https://calendar.google.com/calendar/ical/6efbf2d972aac39f356ac8f18be4d3e018320839ab935006323474a15a70d3d6%40group.calendar.google.com/private-5cbcdfd6ed9e8cfa8e4a0e7f87ffa77c/basic.ics" target="_blank" class="btn-primary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
+                    <i class="fas fa-calendar-plus mr-2"></i> Agendar Evento
+                </a>
+                
+                <a href="https://maps.app.goo.gl/WZKwy8SnpfedyXm56" target="_blank" class="btn-secondary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
+                    <i class="fas fa-map-marked-alt mr-2"></i> Ver Ubicación
+                </a>
+                
+                <a href="https://forms.gle/iKEZM47NPxpLWSKJ9" target="_blank" class="btn-primary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
+                    <i class="fas fa-check-circle mr-2"></i> Confirmar Asistencia
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative rainbow -->
+        <div class="rainbow hidden md:block">
+            <svg width="150" height="75" viewBox="0 0 150 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,75 Q75,0 150,75" stroke="#dc9f92" stroke-width="10" fill="none" opacity="0.6" />
+                <path d="M15,75 Q75,15 135,75" stroke="#ebc7ad" stroke-width="10" fill="none" opacity="0.6" />
+                <path d="M30,75 Q75,30 120,75" stroke="#a7b67a" stroke-width="10" fill="none" opacity="0.6" />
+                <path d="M45,75 Q75,45 105,75" stroke="#d0caa9" stroke-width="10" fill="none" opacity="0.6" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Gifts Section -->
+    <section id="gifts" class="section py-20 bg-[#ede5c2] relative">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-[#8e7f57]">Ideas de Regalos</h2>
+            
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="decorative-element">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
+                        <!-- Gift box -->
+                        <rect x="20" y="40" width="60" height="50" fill="#dc9f92" />
+                        <rect x="45" y="40" width="10" height="50" fill="#ebc7ad" />
+                        <rect x="10" y="30" width="80" height="15" fill="#ebc7ad" />
+                        <rect x="45" y="30" width="10" height="15" fill="#dc9f92" />
+                        <path d="M50,10 Q65,25 80,30 L50,30 Z" fill="#a7b67a" />
+                        <path d="M50,10 Q35,25 20,30 L50,30 Z" fill="#a7b67a" />
+                    </svg>
+                </div>
+                
+                <p class="text-lg mb-8">Si deseas hacernos un regalo para nuestra pequeña Eliana, aquí encontrarás algunas ideas que nos encantarían.</p>
+                
+                <a href="https://forms.gle/xkJwnZmLdafjQpGs6" target="_blank" class="btn-secondary px-8 py-4 rounded-full inline-flex items-center justify-center text-lg font-medium">
+                    <i class="fas fa-gift mr-2"></i> Ver Ideas de Regalos
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="flower flower-2">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="10" fill="#ebc7ad" />
+                <ellipse cx="40" cy="20" rx="10" ry="15" fill="#dc9f92" />
+                <ellipse cx="40" cy="60" rx="10" ry="15" fill="#dc9f92" />
+                <ellipse cx="20" cy="40" rx="15" ry="10" fill="#dc9f92" />
+                <ellipse cx="60" cy="40" rx="15" ry="10" fill="#dc9f92" />
+            </svg>
+        </div>
+        
+        <div class="leaf leaf-3">
+            <svg width="100" height="150" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50,0 C80,50 100,100 50,150 C0,100 20,50 50,0 Z" fill="#a7b67a" opacity="0.6" />
+                <path d="M50,20 C70,60 80,100 50,130 C20,100 30,60 50,20 Z" fill="#5a673b" opacity="0.3" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section id="thanks" class="section py-20 relative">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#8e7f57]">¡Gracias por acompañarnos!</h2>
+                
+                <div class="decorative-element">
+                    <svg width="150" height="80" viewBox="0 0 150 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
+                        <!-- Baby footprints -->
+                        <ellipse cx="30" cy="20" rx="8" ry="12" fill="#dc9f92" transform="rotate(-15)" />
+                        <circle cx="20" cy="25" r="4" fill="#dc9f92" />
+                        <circle cx="15" cy="35" r="4" fill="#dc9f92" />
+                        <circle cx="20" cy="45" r="4" fill="#dc9f92" />
+                        
+                        <ellipse cx="70" cy="40" rx="8" ry="12" fill="#dc9f92" transform="rotate(15)" />
+                        <circle cx="80" cy="45" r="4" fill="#dc9f92" />
+                        <circle cx="85" cy="55" r="4" fill="#dc9f92" />
+                        <circle cx="80" cy="65" r="4" fill="#dc9f92" />
+                        
+                        <ellipse cx="110" cy="20" rx="8" ry="12" fill="#dc9f92" transform="rotate(-15)" />
+                        <circle cx="100" cy="25" r="4" fill="#dc9f92" />
+                        <circle cx="95" cy="35" r="4" fill="#dc9f92" />
+                        <circle cx="100" cy="45" r="4" fill="#dc9f92" />
+                    </svg>
+                </div>
+                
+                <p class="text-lg mb-8">Tu presencia hará de este día un momento aún más especial para nuestra familia. Si tienes alguna duda, no dudes en contactarnos.</p>
+                
+                <div class="flex justify-center">
+                    <a href="https://wa.me/50687996111" target="_blank" class="contact-card flex items-center text-center py-4 px-8 hover:no-underline">
+                        <div class="flex flex-col items-center">
+                            <div class="icon-circle">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-[#8e7f57]">Contacto</h3>
+                            <p class="text-lg mb-4">Kenneth Salas • 8799-6111</p>
+                            <button class="whatsapp-btn px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
+                                <i class="fab fa-whatsapp mr-2"></i> Enviar mensaje
+                            </button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cloud cloud-1" style="top: 70%; left: 5%;">
+            <svg width="120" height="80" viewBox="0 0 120 80" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30,60 Q10,65 10,50 Q10,35 25,35 Q25,10 50,10 Q80,10 80,35 Q95,25 105,35 Q120,45 110,60 Q100,70 80,65 Q70,75 50,70 Q35,70 30,60 Z" />
+            </svg>
+        </div>
+        
+        <div class="star star-1" style="top: 60%; left: 80%;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="#d4af37" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,0 L13,7 L20,7 L14,12 L16,20 L10,15 L4,20 L6,12 L0,7 L7,7 Z" />
+            </svg>
+        </div>
+    </section>
+
+    <footer class="bg-[#8e7f57] text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>Con amor, esperamos la llegada de Eliana</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation dots
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                const sectionId = this.getAttribute('data-section');
+                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Scroll down button
+        document.getElementById('scrollDown').addEventListener('click', function() {
+            document.getElementById('welcome').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Update active navigation dot on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navDots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('data-section') === current) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94bc0772d43fc0a7',t:'MTc0OTI1NjEwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<audio id="musicaFondo" src="Canción.mp3" loop preload="auto" autoplay></audio>
+
+<button onclick="toggleMusic()" id="btnMusica"
+  class="fixed top-3 left-3 z-50 bg-[#a7b67a] text-white text-sm px-3 py-1.5 rounded-full shadow-md hover:shadow-lg transition-opacity duration-500">
+  🔇 
+</button>
+
+<script>
+  const musica = document.getElementById("musicaFondo");
+  const boton = document.getElementById("btnMusica");
+
+  function toggleMusic() {
+    if (musica.paused) {
+      musica.play();
+      boton.innerText = "🔊";
+    } else {
+      musica.pause();
+      boton.innerText = "🔇";
+    }
+  }
+    // 👇 Efecto al hacer scroll
+    window.addEventListener("scroll", () => {
+    if (window.scrollY > 30) {
+      boton.style.opacity = "0.4";
+    } else {
+      boton.style.opacity = "1";
+    }
+  });
+</script>
 </body>
 </html>
