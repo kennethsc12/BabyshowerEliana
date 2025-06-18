@@ -88,6 +88,10 @@
   </div>
 </section>
 
+<div id="loading" class="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80 text-[#8e7f57] text-xl font-bold hidden z-50">
+  Enviando tu confirmación...
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const steps = {
@@ -96,6 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
     stepSi: document.getElementById("step-si"),
     final: document.getElementById("step-final")
   };
+
+  const loading = document.getElementById("loading");
 
   function showOnly(stepId) {
     Object.values(steps).forEach(div => div.classList.add("hidden"));
@@ -175,15 +181,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const url = "https://script.google.com/macros/s/AKfycbxHLN1BWip6UdgPiAb3gWFy8oRaLZP7n6vQfU0uNrEoMHpVHKbQ4WjSHPsSRTyqKqzG/exec";
 
+    loading.classList.remove("hidden");
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
     })
     .then(() => {
-      window.location.href = "index.html#details";
+      setTimeout(() => {
+        window.location.href = "index.html#details";
+      }, 1200);
     })
     .catch(() => {
+      loading.classList.add("hidden");
       alert("Hubo un error al enviar tu confirmación. Intentá de nuevo.");
     });
   };
