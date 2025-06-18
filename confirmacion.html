@@ -41,6 +41,7 @@
 </head>
 <body>
     <!-- Página exclusiva para Confirmación de Asistencia -->
+<!-- Página exclusiva para Confirmación de Asistencia -->
 <section id="confirmacion" class="section min-h-screen py-20" style="background-image: url('Confirmacion.png'); background-repeat: repeat; background-size: 400px;">
   <div class="container mx-auto px-4">
     <div id="formulario-asistencia" class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg text-[#8e7f57]">
@@ -65,7 +66,7 @@
         <h2 class="text-2xl font-bold mb-4">Gracias por avisarnos.</h2>
         <p class="text-lg mb-4">Lamentamos que no puedas acompañarnos, pero te agradecemos mucho por tomarte el tiempo para responder.</p>
         <p class="text-lg">¡Esperamos que nos acompañes en otra ocasión!</p>
-        <button onclick="enviarFormulario('No')" class="btn-secondary mt-6 px-6 py-3 rounded-full">Finalizar</button>
+        <button onclick="enviarFormulario('No', true)" class="btn-secondary mt-6 px-6 py-3 rounded-full">Finalizar</button>
       </div>
 
       <!-- Paso 2: Sí asistirá -->
@@ -131,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
       html = `
         <h2 class="text-2xl font-bold mb-4">¡Gracias por confirmar tu asistencia!</h2>
         <p class="text-lg mb-4">Nos alegra que puedas acompañarnos en este día tan especial.</p>
-        <button onclick="enviarFormulario('Sí')" class="btn-primary px-6 py-3 rounded-full">Finalizar</button>
+        <button onclick="enviarFormulario('Sí', true)" class="btn-primary px-6 py-3 rounded-full">Finalizar</button>
       `;
     } else {
       const num = parseInt(opcion);
@@ -151,14 +152,14 @@ document.addEventListener("DOMContentLoaded", function () {
           html += `<input type="text" id="acomp${i}" class="w-full p-3 border border-gray-300 rounded-lg mb-2" placeholder="Acompañante ${i}">`;
         }
       }
-      html += `</div><button onclick="enviarFormulario('Sí')" class="btn-primary px-6 py-3 rounded-full">Finalizar</button>`;
+      html += `</div><button onclick="enviarFormulario('Sí', true)" class="btn-primary px-6 py-3 rounded-full">Finalizar</button>`;
     }
 
     steps.final.innerHTML = html;
     showOnly("final");
   };
 
-  window.enviarFormulario = function (estado) {
+  window.enviarFormulario = function (estado, redirigir = false) {
     if (data.acompanantes !== "Solo yo" && data.acompanantes !== "" && data.asistencia === "Sí") {
       if (data.acompanantes === "5") {
         data.nombres = document.getElementById("acompNombres").value.trim();
@@ -172,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    const url = "https://script.google.com/macros/s/AKfycbzUwYTjxrXTpTfuxHHyhiWc_q92ljIDAd8GbbcaIbCOTBsts7dlohtyNH-i6m4f2bW5/exec";
+    const url = "https://script.google.com/macros/s/AKfycbxHLN1BWip6UdgPiAb3gWFy8oRaLZP7n6vQfU0uNrEoMHpVHKbQ4WjSHPsSRTyqKqzG/exec";
 
     fetch(url, {
       method: "POST",
@@ -180,9 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
       headers: { "Content-Type": "application/json" }
     })
     .then(() => {
-      steps.final.innerHTML = `
-        <h2 class="text-2xl font-bold mb-4">¡Gracias por confirmar tu asistencia!</h2>
-        <p class="text-lg mb-4">Tu respuesta ha sido registrada exitosamente.</p>`;
+      window.location.href = "index.html#details";
     })
     .catch(() => {
       alert("Hubo un error al enviar tu confirmación. Intentá de nuevo.");
