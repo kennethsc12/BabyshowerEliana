@@ -146,17 +146,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "2": "¡Genial! Vas a venir con dos acompañantes.",
         "3": "¡Qué bonito grupo! Escribí los nombres de tus tres acompañantes.",
         "4": "¡Nos emociona recibirlos! Indicá los nombres de tus cuatro acompañantes.",
-        "5": "¡Guau, una gran familia! Escribí los nombres separados por comas."
+        "5": "¡Guau, una gran familia! Escribí los nombres de tus cinco acompañantes."
       };
       html += `<h2 class="text-2xl font-bold mb-4">${textos[opcion]}</h2><div class="mb-4">`;
 
-      if (opcion === "5") {
-        html += `<textarea id="acompNombres" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Ej: Ana, Luis, Mateo..."></textarea>`;
-      } else {
-        for (let i = 1; i <= num; i++) {
-          html += `<input type="text" id="acomp${i}" class="w-full p-3 border border-gray-300 rounded-lg mb-2" placeholder="Acompañante ${i}">`;
-        }
+      for (let i = 1; i <= num; i++) {
+        html += `<input type="text" id="acomp${i}" class="w-full p-3 border border-gray-300 rounded-lg mb-2" placeholder="Acompañante ${i}">`;
       }
+
       html += `</div><button onclick="enviarFormulario('Sí', true)" class="btn-primary px-6 py-3 rounded-full">Finalizar</button>`;
     }
 
@@ -166,16 +163,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.enviarFormulario = function (estado, redirigir = false) {
     if (data.acompanantes !== "Solo yo" && data.acompanantes !== "" && data.asistencia === "Sí") {
-      if (data.acompanantes === "5") {
-        data.nombres = document.getElementById("acompNombres").value.trim();
-      } else {
-        let nombres = [];
-        for (let i = 1; i <= parseInt(data.acompanantes); i++) {
-          const val = document.getElementById("acomp" + i).value.trim();
-          if (val) nombres.push(val);
-        }
-        data.nombres = nombres.join(", ");
+      let nombres = [];
+      for (let i = 1; i <= parseInt(data.acompanantes); i++) {
+        const val = document.getElementById("acomp" + i).value.trim();
+        if (val) nombres.push(val);
       }
+      data.nombres = nombres.join(", ");
     }
 
     const url = "https://script.google.com/macros/s/AKfycbwKqsY7wIl_TwWoNwmOr2OusrIPK4JItBh5izi4ZiBmVx8jmXiJSW92Kb_39yJKG8kr/exec";
