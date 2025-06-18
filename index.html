@@ -448,7 +448,7 @@
                     <i class="fas fa-map-marked-alt mr-2"></i> Ver Ubicación
                 </a>
                 
-                <a href="https://form.jotform.com/251589271084867" target="_blank" class="btn-primary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
+                <a href="confirmacion.html" class="btn-primary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
                     <i class="fas fa-check-circle mr-2"></i> Confirmar Asistencia
                 </a>
             </div>
@@ -464,6 +464,9 @@
             </svg>
         </div>
     </section>
+
+
+
 
     <!-- Gifts Section -->
     <section id="gifts" class="section py-20 bg-[#ede5c2] relative">
@@ -625,6 +628,107 @@
       boton.style.opacity = "1";
     }
   });
+</script>
+<script>
+const steps = {
+  step1: document.getElementById("step-1"),
+  stepNo: document.getElementById("step-no"),
+  stepSi: document.getElementById("step-si"),
+  final: document.getElementById("step-final")
+};
+
+function showOnly(stepId) {
+  Object.values(steps).forEach(div => div.classList.add("hidden"));
+  steps[stepId].classList.remove("hidden");
+}
+
+let data = {
+  nombre: "",
+  asistencia: "",
+  acompanantes: "",
+  nombres: ""
+};
+
+function handleAsistencia(confirmado) {
+  const nombre = document.getElementById("nombre").value.trim();
+  if (!nombre) return alert("Por favor escribí tu nombre.");
+  data.nombre = nombre;
+
+  if (!confirmado) {
+    data.asistencia = "No";
+    showOnly("stepNo");
+  } else {
+    data.asistencia = "Sí";
+    showOnly("stepSi");
+  }
+}
+
+function selectAcompanantes(opcion) {
+  data.acompanantes = opcion;
+  let html = "";
+
+  if (opcion === "Solo yo") {
+    data.nombres = "";
+    html = `
+      <h2 class="text-2xl font-bold mb-4">¡Gracias por confirmar tu asistencia!</h2>
+      <p class="text-lg mb-4">Nos alegra que puedas acompañarnos en este día tan especial.</p>
+      <button onclick="enviarFormulario('Sí')" class="btn-primary px-6 py-3 rounded-full">Finalizar</button>
+    `;
+  } else {
+    const num = parseInt(opcion);
+    const textos = {
+      "1": "Qué alegría que vengás acompañado(a). Escribí el nombre de tu acompañante.",
+      "2": "¡Genial! Vas a venir con dos acompañantes.",
+      "3": "¡Qué bonito grupo! Escribí los nombres de tus tres acompañantes.",
+      "4": "¡Nos emociona recibirlos! Indicá los nombres de tus cuatro acompañantes.",
+      "5": "¡Guau, una gran familia! Escribí los nombres separados por comas."
+    };
+    html += `<h2 class="text-2xl font-bold mb-4">${textos[opcion]}</h2><div class="mb-4">`;
+
+    if (opcion === "5") {
+      html += `<textarea id="acompNombres" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Ej: Ana, Luis, Mateo..."></textarea>`;
+    } else {
+      for (let i = 1; i <= num; i++) {
+        html += `<input type="text" id="acomp${i}" class="w-full p-3 border border-gray-300 rounded-lg mb-2" placeholder="Acompañante ${i}">`;
+      }
+    }
+    html += `</div><button onclick="enviarFormulario('Sí')" class="btn-primary px-6 py-3 rounded-full">Finalizar</button>`;
+  }
+
+  steps.final.innerHTML = html;
+  showOnly("final");
+}
+
+function enviarFormulario(estado) {
+  if (data.acompanantes !== "Solo yo" && data.acompanantes !== "" && data.asistencia === "Sí") {
+    if (data.acompanantes === "5") {
+      data.nombres = document.getElementById("acompNombres").value.trim();
+    } else {
+      let nombres = [];
+      for (let i = 1; i <= parseInt(data.acompanantes); i++) {
+        const val = document.getElementById("acomp" + i).value.trim();
+        if (val) nombres.push(val);
+      }
+      data.nombres = nombres.join(", ");
+    }
+  }
+
+  const url = "https://script.google.com/macros/s/AKfycbxHLN1BWip6UdgPiAb3gWFy8oRaLZP7n6vQfU0uNrEoMHpVHKbQ4WjSHPsSRTyqKqzG/exec";
+
+  fetch(url, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then(() => {
+    steps.final.innerHTML = `
+      <h2 class="text-2xl font-bold mb-4">¡Gracias por confirmar tu asistencia!</h2>
+      <p class="text-lg mb-4">Tu respuesta ha sido registrada exitosamente.</p>`;
+  })
+  .catch(() => {
+    alert("Hubo un error al enviar tu confirmación. Intentá de nuevo.");
+  });
+}
 </script>
 </body>
 </html>
