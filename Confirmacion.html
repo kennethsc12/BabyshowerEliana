@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirmación de Asistencia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f1eddc;
+      color: #8e7f57;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .btn-primary {
+      background-color: #dc9f92;
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: white;
+      color: #dc9f92;
+      border: 2px solid #dc9f92;
+    }
+    .btn-secondary {
+      background-color: #a7b67a;
+      color: white;
+    }
+    .btn-secondary:hover {
+      background-color: white;
+      color: #a7b67a;
+      border: 2px solid #a7b67a;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+    <!-- Página exclusiva para Confirmación de Asistencia -->
+<section id="confirmacion" class="section min-h-screen py-20" style="background-image: url('Confirmacion.png'); background-repeat: repeat; background-size: 400px;">
+  <div class="container mx-auto px-4">
+    <div id="formulario-asistencia" class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg text-[#8e7f57]">
+
+      <button onclick="location.href='index.html#details'" class="btn-secondary mb-6 px-4 py-2 rounded-full">← Volver al inicio</button>
+
+      <!-- Paso 1 -->
+      <div id="step-1">
+        <h2 class="text-2xl font-bold mb-4">Por favor, confirmá tu presencia en esta celebración tan especial.</h2>
+        <p class="mb-6 text-lg">¡Tu compañía es un regalo para nosotros!</p>
+        <label class="block font-semibold mb-2">Nombre completo</label>
+        <input id="nombre" type="text" class="w-full p-3 border border-gray-300 rounded-lg mb-6" placeholder="Nombre y Apellido">
+        <label class="block font-semibold mb-2">¿Nos podrás acompañar?</label>
+        <div class="flex gap-4 mb-6">
+          <button onclick="handleAsistencia(true)" class="btn-primary px-6 py-3 rounded-full">Sí</button>
+          <button onclick="handleAsistencia(false)" class="btn-secondary px-6 py-3 rounded-full">No</button>
+        </div>
+      </div>
+
+      <!-- Paso 2: No asistirá -->
+      <div id="step-no" class="hidden">
+        <h2 class="text-2xl font-bold mb-4">Gracias por avisarnos.</h2>
+        <p class="text-lg mb-4">Lamentamos que no puedas acompañarnos, pero te agradecemos mucho por tomarte el tiempo para responder.</p>
+        <p class="text-lg">¡Esperamos que nos acompañes en otra ocasión!</p>
+        <button onclick="enviarFormulario('No')" class="btn-secondary mt-6 px-6 py-3 rounded-full">Finalizar</button>
+      </div>
+
+      <!-- Paso 2: Sí asistirá -->
+      <div id="step-si" class="hidden">
+        <h2 class="text-2xl font-bold mb-4">¿Cuántos acompañantes llevás?</h2>
+        <div class="grid gap-3">
+          <button class="btn-secondary px-6 py-3 rounded-full" onclick="selectAcompanantes('Solo yo')">Solo yo</button>
+          <button class="btn-secondary px-6 py-3 rounded-full" onclick="selectAcompanantes('1')">1 Acompañante y yo</button>
+          <button class="btn-secondary px-6 py-3 rounded-full" onclick="selectAcompanantes('2')">2 Acompañantes y yo</button>
+          <button class="btn-secondary px-6 py-3 rounded-full" onclick="selectAcompanantes('3')">3 Acompañantes y yo</button>
+          <button class="btn-secondary px-6 py-3 rounded-full" onclick="selectAcompanantes('4')">4 Acompañantes y yo</button>
+          <button class="btn-secondary px-6 py-3 rounded-full" onclick="selectAcompanantes('5')">5 Acompañantes y yo</button>
+        </div>
+      </div>
+
+      <!-- Paso acompañantes -->
+      <div id="step-final" class="hidden"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const steps = {
+    step1: document.getElementById("step-1"),
+    stepNo: document.getElementById("step-no"),
+    stepSi: document.getElementById("step-si"),
+    final: document.getElementById("step-final")
+  };
+
+  function showOnly(stepId) {
+    Object.values(steps).forEach(div => div.classList.add("hidden"));
+    steps[stepId].classList.remove("hidden");
+  }
+
+  let data = {
+    nombre: "",
+    asistencia: "",
+    acompanantes: "",
+    nombres: ""
+  };
+
+  window.handleAsistencia = function (confirmado) {
+    const nombre = document.getElementById("nombre").value.trim();
+    if (!nombre) return alert("Por favor escribí tu nombre.");
+    data.nombre = nombre;
+
+    if (!confirmado) {
+      data.asistencia = "No";
+      showOnly("stepNo");
+    } else {
+      data.asistencia = "Sí";
+      showOnly("stepSi");
+    }
+  };
+
+  window.selectAcompanantes = function (opcion) {
+    data.acompanantes = opcion;
+    let html = "";
+
+    if (opcion === "Solo yo") {
+      data.nombres = "";
+      html = `
+        <h2 class="text-2xl font-bold mb-4">¡Gracias por confirmar tu asistencia!</h2>
+        <p class="text-lg mb-4">Nos alegra que puedas acompañarnos en este día tan especial.</p>
+        <button onclick="enviarFormulario('Sí')" class="btn-primary px-6 py-3 rounded-full">Finalizar</button>
+      `;
+    } else {
+      const num = parseInt(opcion);
+      const textos = {
+        "1": "Qué alegría que vengás acompañado(a). Escribí el nombre de tu acompañante.",
+        "2": "¡Genial! Vas a venir con dos acompañantes.",
+        "3": "¡Qué bonito grupo! Escribí los nombres de tus tres acompañantes.",
+        "4": "¡Nos emociona recibirlos! Indicá los nombres de tus cuatro acompañantes.",
+        "5": "¡Guau, una gran familia! Escribí los nombres separados por comas."
+      };
+      html += `<h2 class="text-2xl font-bold mb-4">${textos[opcion]}</h2><div class="mb-4">`;
+
+      if (opcion === "5") {
+        html += `<textarea id="acompNombres" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Ej: Ana, Luis, Mateo..."></textarea>`;
+      } else {
+        for (let i = 1; i <= num; i++) {
+          html += `<input type="text" id="acomp${i}" class="w-full p-3 border border-gray-300 rounded-lg mb-2" placeholder="Acompañante ${i}">`;
+        }
+      }
+      html += `</div><button onclick="enviarFormulario('Sí')" class="btn-primary px-6 py-3 rounded-full">Finalizar</button>`;
+    }
+
+    steps.final.innerHTML = html;
+    showOnly("final");
+  };
+
+  window.enviarFormulario = function (estado) {
+    if (data.acompanantes !== "Solo yo" && data.acompanantes !== "" && data.asistencia === "Sí") {
+      if (data.acompanantes === "5") {
+        data.nombres = document.getElementById("acompNombres").value.trim();
+      } else {
+        let nombres = [];
+        for (let i = 1; i <= parseInt(data.acompanantes); i++) {
+          const val = document.getElementById("acomp" + i).value.trim();
+          if (val) nombres.push(val);
+        }
+        data.nombres = nombres.join(", ");
+      }
+    }
+
+    const url = "https://script.google.com/macros/s/AKfycbzUwYTjxrXTpTfuxHHyhiWc_q92ljIDAd8GbbcaIbCOTBsts7dlohtyNH-i6m4f2bW5/exec";
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" }
+    })
+    .then(() => {
+      steps.final.innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">¡Gracias por confirmar tu asistencia!</h2>
+        <p class="text-lg mb-4">Tu respuesta ha sido registrada exitosamente.</p>`;
+    })
+    .catch(() => {
+      alert("Hubo un error al enviar tu confirmación. Intentá de nuevo.");
+    });
+  };
+});
+</script>
+
+
+<!-- Aquí va el formulario completo -->
+<!-- Pega aquí el contenido del documento “Formulario Asistencia” que ya tenés listo -->
+
+<!-- IMPORTANTE: Esto ya está incluido automáticamente porque lo guardamos arriba -->
+<!-- Si lo necesitás todo consolidado en un solo archivo, ya lo tenés en el canvas -->
+
+</body>
+</html>
