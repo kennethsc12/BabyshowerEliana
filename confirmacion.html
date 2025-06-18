@@ -41,7 +41,6 @@
 </head>
 <body>
     <!-- Página exclusiva para Confirmación de Asistencia -->
-<!-- Página exclusiva para Confirmación de Asistencia -->
 <section id="confirmacion" class="section min-h-screen py-20" style="background-image: url('Confirmacion.png'); background-repeat: repeat; background-size: 400px;">
   <div class="container mx-auto px-4">
     <div id="formulario-asistencia" class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg text-[#8e7f57]">
@@ -179,12 +178,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    const url = "https://script.google.com/macros/s/AKfycbzUwYTjxrXTpTfuxHHyhiWc_q92ljIDAd8GbbcaIbCOTBsts7dlohtyNH-i6m4f2bW5/exec";
+    const url = "https://script.google.com/macros/s/AKfycbzUwYTjxrXTpTfuxHHyhiWc_q92ljIDAd8GbbcaIbCOTBsts7dlohtyNH-i6m4f2bW5/exec"; // ← Reemplazar por tu URL real
 
     loading.classList.remove("hidden");
 
     fetch(url, {
       method: "POST",
+      mode: "no-cors",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
     })
