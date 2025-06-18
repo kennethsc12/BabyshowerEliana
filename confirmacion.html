@@ -41,6 +41,7 @@
 </head>
 <body>
     <!-- Página exclusiva para Confirmación de Asistencia -->
+<!-- Página exclusiva para Confirmación de Asistencia -->
 <section id="confirmacion" class="section min-h-screen py-20" style="background-image: url('Confirmacion.png'); background-repeat: repeat; background-size: 400px;">
   <div class="container mx-auto px-4">
     <div id="formulario-asistencia" class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg text-[#8e7f57]">
@@ -83,6 +84,14 @@
 
       <!-- Paso acompañantes -->
       <div id="step-final" class="hidden"></div>
+
+      <!-- Paso agradecimiento final -->
+      <div id="step-thankyou" class="hidden">
+        <h2 class="text-2xl font-bold mb-4">¡Gracias por confirmar tu asistencia!</h2>
+        <p class="text-lg mb-4">Nos alegra mucho que puedas acompañarnos. ¡Nos vemos muy pronto!</p>
+        <button onclick="location.href='index.html#details'" class="btn-secondary mt-4 px-6 py-3 rounded-full">← Volver al inicio</button>
+      </div>
+
     </div>
   </div>
 </section>
@@ -97,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
     step1: document.getElementById("step-1"),
     stepNo: document.getElementById("step-no"),
     stepSi: document.getElementById("step-si"),
-    final: document.getElementById("step-final")
+    final: document.getElementById("step-final"),
+    thankyou: document.getElementById("step-thankyou")
   };
 
   const loading = document.getElementById("loading");
@@ -189,9 +199,8 @@ document.addEventListener("DOMContentLoaded", function () {
       body: formBody
     })
     .then(() => {
-      setTimeout(() => {
-        window.location.href = "index.html#details";
-      }, 1200);
+      loading.classList.add("hidden");
+      showOnly("thankyou");
     })
     .catch(() => {
       loading.classList.add("hidden");
@@ -200,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 </script>
+
 
 <!-- Aquí va el formulario completo -->
 <!-- Pega aquí el contenido del documento “Formulario Asistencia” que ya tenés listo -->
