@@ -13,9 +13,28 @@
   </style>
  </head>
  <body class="flex flex-col items-center justify-center min-h-screen p-4">
+
   <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-xl text-center">
-   <h1 class="text-2xl font-bold text-[#8e7f57] mb-6">
-    Elige uno o más regalitos 🎁
+    <div class="text-left mb-4">
+  <button 
+    onclick="location.href='index.html#regalos'"
+    class="bg-[#a7b67a] text-white px-2 py-1 rounded-full font-medium hover:bg-[#8e7f57] transition"  >
+    ← Volver al inicio
+  </button>
+  </div>
+
+     <section class="text-center mb-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-2">Ideas de Regalo</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto">
+      Si deseas acompañarnos con un detalle para nuestra pequeña Eliana, esta lista puede servirte de guía, sin compromiso.
+    
+    </p>
+     <p strong>¡Valoramos mucho cada muestra de cariño para Eliana!</strong></p>
+    </p>
+    <hr class="mt-2 border-[#d0caa9]" />
+  </section> 
+   <h1 class="text-4x3 font-bold text-[#8e7f57] mb-6">
+    Podés elegir uno o más regalitos
    </h1>
     <!-- Formulario de regalos -->
     <form class="space-y-4 text-left" id="giftForm" method="POST" action="https://script.google.com/macros/s/AKfycbwKqsY7wIl_TwWoNwmOr2OusrIPK4JItBh5izi4ZiBmVx8jmXiJSW92Kb_39yJKG8kr/exec">
@@ -1449,9 +1468,29 @@
         });
       });
 
-      const stock = {
-        "chupones_anticólicos": 3, "esterilizador_de_chupones": 1, "calentador_de_chupones": 1, "cepillo_para_lavar_chupones": 2, "baberos_impermeables": 3, "beberito": 2, "cubiertos_de_entrenamiento_silicón": 1, "silla_para_comer": 1, "contenedor_de_fórmula": 2, "plato_entrenador": 1, "almohada_de_lactancia": 1, "escurridor_de_chupones": 1, "bodies__mameluco_de_algodón_0-3_meses": 3, "bodies__mameluco_de_algodón_3-6_meses": 3, "bodies__mameluco_de_algodón_6-9_meses": 3, "bodies__mameluco_de_algodón_9-12_meses": 3, "pijamas_0-3_meses": 3, "pijamas_3-6_meses": 3, "pijamas_6-9_meses": 3, "pijamas_9-12_meses": 3, "cobijitas_antialérgicas": 4, "gorritos_y_medias": 4, "mantillas_de_tela": 4, "pano_de_bano": 4, "tina_para_bebé_con_termómetro": 1, "aspirador_nasal": 2, "regadera_de_mano_para_bano": 1, "esponja_de_bano_bebé": 3, "crema_para_panal": 10, "guante_para_banar_bebé": 2, "esponja_para_tina": 2, "kit_de_aseo_bebé": 2, "móvil": 1, "sábanas_ajustables_para_colchón_bebé": 4, "protector_de_colchón_bebé__impermeable": 4, "mordedores": 5, "coche": 1, "portabebé_ergonómico": 1, "silla_para_el_auto": 1, "manta_de_paseo": 2, "termómetro_infantil": 1, "almohada_maternidad": 1, "aceite_menen": 5, "fular_elástico": 2
-      };
+      let stock = {};
+
+      fetch("https://script.google.com/macros/s/AKfycbwKqsY7wIl_TwWoNwmOr2OusrIPK4JItBh5izi4ZiBmVx8jmXiJSW92Kb_39yJKG8kr/exec") // 👈 remplaza por tu ID real
+        .then(res => res.json())
+        .then(data => {
+          stock = data;
+
+          // Actualizar vista al cargar
+          Object.keys(stock).forEach(key => {
+            const cantidad = stock[key];
+            const span = document.getElementById(`stock-${key}`);
+            const input = document.getElementById(`input-${key}`);
+            const label = document.getElementById(`label-${key}`);
+
+            if (span) {
+              span.textContent = cantidad > 0 ? `${cantidad} restantes` : "agotado";
+            }
+
+            if (input && cantidad <= 0) input.disabled = true;
+            if (label && cantidad <= 0) label.classList.add("line-through", "text-gray-400");
+          });
+        });
+
 
       const form = document.getElementById("giftForm");
       const agradecimiento = document.getElementById("agradecimiento");
