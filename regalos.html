@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Regalos para Eliana
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   body { background-color: #f1eddc; font-family: 'Arial', sans-serif; }
+  </style>
+ </head>
+ <body class="flex flex-col items-center justify-center min-h-screen p-4">
+  <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-xl text-center">
+   <h1 class="text-2xl font-bold text-[#8e7f57] mb-6">
+    Elige uno o más regalitos 🎁
+   </h1>
+    <!-- Formulario de regalos -->
+    <form class="space-y-4 text-left" id="giftForm" method="POST" action="https://script.google.com/macros/s/AKfycbwKqsY7wIl_TwWoNwmOr2OusrIPK4JItBh5izi4ZiBmVx8jmXiJSW92Kb_39yJKG8kr/exec">
+        <!-- Chupones Anticólicos -->
+        <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+          <!-- Checkbox + nombre -->
+          <div class="flex items-center space-x-2">
+            <input class="scale-125" data-key="chupones_anticólicos" id="check-chupones_anticólicos" type="checkbox" />
+            <label class="text-[#5a673b] font-medium" for="check-chupones_anticólicos" id="label-chupones_anticólicos">
+              Chupones Anticólicos
+            </label>
+          </div>
+            
+          <!-- Botón siempre visible -->
+          <div class="flex items-center">
+            <button 
+              type="button" onclick="mostrarImagen('chupones_anticolicos')" 
+              class="px-3 py-1 rounded text-sm font-semibold text-white"
+              style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+              onmouseover="this.style.backgroundColor='#5a673b';"
+              onmouseout="this.style.backgroundColor='#a7b67a';">
+              Ver ejemplo
+            </button>
+          </div>
+            
+          <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+          <div class="flex items-center gap-3 hidden" id="input-wrapper-chupones_anticólicos">
+            <input class="w-16 px-2 py-1 border rounded"
+              id="input-chupones_anticólicos" max="3" min="0"
+              name="chupones_anticólicos" type="number" value="0"/>
+            <span class="text-sm text-gray-500" id="stock-chupones_anticólicos">3 restantes</span>
+          </div>
+        </div>
+          
+            <!-- Esterilizador De Chupones -->
+        <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="esterilizador_de_chupones" id="check-esterilizador_de_chupones" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-esterilizador_de_chupones" id="label-esterilizador_de_chupones">
+            Esterilizador De Chupones
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('esterilizador')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-esterilizador_de_chupones">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-esterilizador_de_chupones" max="1" min="0"
+            name="esterilizador_de_chupones" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-esterilizador_de_chupones">1 restantes</span>
+        </div>
+      </div>
+        
+            <!-- Calentador De Chupones -->
+        <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="calentador_de_chupones" id="check-calentador_de_chupones" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-calentador_de_chupones" id="label-calentador_de_chupones">
+            Calentador de Chupones
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('calentador')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-calentador_de_chupones">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-calentador_de_chupones" max="1" min="0"
+            name="calentador_de_chupones" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-calentador_de_chupones">1 restantes</span>
+        </div>
+      </div>    
+            <!-- Cepillo Para Lavar Chupones -->
+        <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="cepillo_para_lavar_chupones" id="check-cepillo_para_lavar_chupones" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-cepillo_para_lavar_chupones" id="label-cepillo_para_lavar_chupones">
+            Cepillo para Lavar Chupones
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('cepillo')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-cepillo_para_lavar_chupones">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-cepillo_para_lavar_chupones" max="2" min="0"
+            name="cepillo_para_lavar_chupones" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-cepillo_para_lavar_chupones">2 restantes</span>
+        </div>
+      </div>
+        
+            <!-- Baberos Impermeables -->
+        <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="baberos_impermeables" id="check-baberos_impermeables" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-baberos_impermeables" id="label-baberos_impermeables">
+            Baberos Impermeables
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('babero')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-baberos_impermeables">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-baberos_impermeables" max="3" min="0"
+            name="baberos_impermeables" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-baberos_impermeables">3 restantes</span>
+        </div>
+      </div>
+        
+      <!-- Almohada De Lactancia -->
+        <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="almohada_de_lactancia" id="check-almohada_de_lactancia" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-almohada_de_lactancia" id="label-almohada_de_lactancia">
+            Almohada De Lactancia
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('almohada_lactancia')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+          <div class="flex items-center gap-3 hidden" id="input-wrapper-almohada_de_lactancia">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-almohada_de_lactancia" max="1" min="0"
+            name="almohada_de_lactancia" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-almohada_de_lactancia">1 restantes</span>
+        </div>
+      </div>
+      <!-- Almohada Maternidad -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="almohada_maternidad" id="check-almohada_maternidad" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-almohada_maternidad" id="label-almohada_maternidad">
+            Almohada Maternidad
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('almohada_maternidad')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-almohada_maternidad">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-almohada_maternidad" max="1" min="0"
+            name="almohada_maternidad" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-almohada_maternidad">1 restantes</span>
+        </div>
+      </div>
+      <!-- Aspirador Nasal -->
+         <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="aspirador_nasal" id="check-aspirador_nasal" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-aspirador_nasal" id="label-aspirador_nasal">
+            Aspirador Nasal
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('aspirador')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-aspirador_nasal">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-aspirador_nasal" max="2" min="0"
+            name="aspirador_nasal" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-aspirador_nasal">2 restantes</span>
+        </div>
+      </div>
+      <!-- Beberito -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="beberito" id="check-beberito" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-beberito" id="label-beberito">
+            Beberito
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('beberito')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-beberito">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-beberito" max="2" min="0"
+            name="beberito" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-beberito">2 restantes</span>
+        </div>
+      </div>
+      <!-- Bodies/ Mameluco De Algodón 0-3 Meses -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="bodies_mameluco_de_algodón_0-3_meses" id="check-bodies_mameluco_de_algodón_0-3_meses" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-bodies_mameluco_de_algodón_0-3_meses" id="label-bodies_mameluco_de_algodón_0-3_meses">
+            Bodies/ Mameluco De Algodón 0-3 Meses
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('mameluco03')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-bodies_mameluco_de_algodón_0-3_meses">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-bodies_mameluco_de_algodón_0-3_meses" max="3" min="0"
+            name="bodies_mameluco_de_algodón_0-3_meses" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-bodies_mameluco_de_algodón_0-3_meses">3 restantes</span>
+        </div>
+      </div>
+      <!-- Bodies/ Mameluco De Algodón 3-6 Meses -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="bodies_mameluco_de_algodón_3-6_meses" id="check-bodies_mameluco_de_algodón_3-6_meses" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-bodies_mameluco_de_algodón_3-6_meses" id="label-bodies_mameluco_de_algodón_3-6_meses">
+            Bodies/ Mameluco De Algodón 3-6 Meses
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('mameluco36')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-bodies_mameluco_de_algodón_3-6_meses">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-bodies_mameluco_de_algodón_3-6_meses" max="3" min="0"
+            name="bodies_mameluco_de_algodón_3-6_meses" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-bodies_mameluco_de_algodón_3-6_meses">3 restantes</span>
+        </div>
+      </div>
+      <!-- Bodies/ Mameluco De Algodón 6-9 Meses -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="bodies_mameluco_de_algodón_6-9_meses" id="check-bodies_mameluco_de_algodón_6-9_meses" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-bodies_mameluco_de_algodón_6-9_meses" id="label-bodies_mameluco_de_algodón_6-9_meses">
+            Bodies/ Mameluco De Algodón 6-9 Meses
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('mameluco69')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-bodies_mameluco_de_algodón_6-9_meses">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-bodies_mameluco_de_algodón_6-9_meses" max="3" min="0"
+            name="bodies_mameluco_de_algodón_6-9_meses" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-bodies_mameluco_de_algodón_6-9_meses">3 restantes</span>
+        </div>
+      </div>
+      <!-- Bodies/ Mameluco De Algodón 9-12 Meses -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="bodies_mameluco_de_algodón_9-12_meses" id="check-bodies_mameluco_de_algodón_9-12_meses" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-bodies_mameluco_de_algodón_9-12_meses" id="label-bodies_mameluco_de_algodón_9-12_meses">
+            Bodies/ Mameluco De Algodón 9-12 Meses
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('mameluco912')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-bodies_mameluco_de_algodón_9-12_meses">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-bodies_mameluco_de_algodón_9-12_meses" max="3" min="0"
+            name="bodies_mameluco_de_algodón_9-12_meses" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-bodies_mameluco_de_algodón_9-12_meses">3 restantes</span>
+        </div>
+      </div>
+      <!-- Cobijitas Antialérgicas -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="cobijitas_antialérgicas" id="check-cobijitas_antialérgicas" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-cobijitas_antialérgicas" id="label-cobijitas_antialérgicas">
+            Cobijitas Antialérgicas
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('cobija')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-cobijitas_antialérgicas">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-cobijitas_antialérgicas" max="4" min="0"
+            name="cobijitas_antialérgicas" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-cobijitas_antialérgicas">4 restantes</span>
+        </div>
+      </div>
+      <!-- Coche -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="coche" id="check-coche" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-coche" id="label-coche">
+            Coche
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('coche')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-coche">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-coche" max="1" min="0"
+            name="coche" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-coche">1 restantes</span>
+        </div>
+      </div>
+      <!-- Contenedor De Fórmula -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="contenedor_de_fórmula" id="check-contenedor_de_fórmula" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-contenedor_de_fórmula" id="label-contenedor_de_fórmula">
+            Contenedor De Fórmula
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('contenedor')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-contenedor_de_fórmula">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-contenedor_de_fórmula" max="2" min="0"
+            name="contenedor_de_fórmula" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-contenedor_de_fórmula">2 restantes</span>
+        </div>
+      </div>
+      <!-- Crema Para Pañal -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="crema_para_pañal" id="check-crema_para_pañal" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-crema_para_pañal" id="label-crema_para_pañal">
+            Crema Para Pañal
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('crema')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-crema_para_pañal">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-crema_para_pañal" max="10" min="0"
+            name="crema_para_pañal" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-crema_para_pañal">10 restantes</span>
+        </div>
+      </div>
+      <!-- Cubiertos De Entrenamiento Silicón -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="cubiertos_de_entrenamiento_silicón" id="check-cubiertos_de_entrenamiento_silicón" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-cubiertos_de_entrenamiento_silicón" id="label-cubiertos_de_entrenamiento_silicón">
+            Cubiertos de Entrenamiento Silicón
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('cubiertos')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-cubiertos_de_entrenamiento_silicón">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-cubiertos_de_entrenamiento_silicón" max="1" min="0"
+            name="cubiertos_de_entrenamiento_silicón" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-cubiertos_de_entrenamiento_silicón">1 restantes</span>
+        </div>
+      </div>
+      <!-- Escurridor De Chupones -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="escurridor_de_chupones" id="check-escurridor_de_chupones" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-escurridor_de_chupones" id="label-escurridor_de_chupones">
+            Escurridor de Chupones
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('escurridor')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-escurridor_de_chupones">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-escurridor_de_chupones" max="1" min="0"
+            name="escurridor_de_chupones" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-escurridor_de_chupones">1 restantes</span>
+        </div>
+      </div>
+      <!-- Esponja De Baño Bebé -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="esponja_de_baño_bebé" id="check-esponja_de_baño_bebé" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-esponja_de_baño_bebé" id="label-esponja_de_baño_bebé">
+            Esponja de Baño Bebé
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('esponja_bebe')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-esponja_de_baño_bebé">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-esponja_de_baño_bebé" max="3" min="0"
+            name="esponja_de_baño_bebé" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-esponja_de_baño_bebé">3 restantes</span>
+        </div>
+      </div>
+      <!-- Esponja Para Tina -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="esponja_para_tina" id="check-esponja_para_tina" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-esponja_para_tina" id="label-esponja_para_tina">
+            Esponja para Tina
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('esponja_tina')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-esponja_para_tina">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-esponja_para_tina" max="2" min="0"
+            name="esponja_para_tina" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-esponja_para_tina">2 restantes</span>
+        </div>
+      </div>
+      <!-- Fular Elástico -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="fular_elástico" id="check-fular_elástico" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-fular_elástico" id="label-fular_elástico">
+            Fular Elástico
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('fular')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-fular_elástico">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-fular_elástico" max="2" min="0"
+            name="fular_elástico" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-fular_elástico">2 restantes</span>
+        </div>
+      </div>
+      <!-- Gorritos Y Medias -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="gorritos_y_medias" id="check-gorritos_y_medias" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-gorritos_y_medias" id="label-gorritos_y_medias">
+            Gorritos y Medias
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('gorro')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-gorritos_y_medias">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-gorritos_y_medias" max="4" min="0"
+            name="gorritos_y_medias" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-gorritos_y_medias">4 restantes</span>
+        </div>
+      </div>
+      <!-- Guante Para Bañar Bebé -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="guante_para_bañar_bebé" id="check-guante_para_bañar_bebé" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-guante_para_bañar_bebé" id="label-guante_para_bañar_bebé">
+            Guante para Bañar Bebé
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('guante')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-guante_para_bañar_bebé">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-guante_para_bañar_bebé" max="2" min="0"
+            name="guante_para_bañar_bebé" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-guante_para_bañar_bebé">2 restantes</span>
+        </div>
+      </div>
+      <!-- Kit De Aseo Bebé -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="kit_de_aseo_bebé" id="check-kit_de_aseo_bebé" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-kit_de_aseo_bebé" id="label-kit_de_aseo_bebé">
+            Kit de Aseo Bebé
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('kit')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-kit_de_aseo_bebé">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-kit_de_aseo_bebé" max="2" min="0"
+            name="kit_de_aseo_bebé" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-kit_de_aseo_bebé">2 restantes</span>
+        </div>
+      </div>
+      <!-- Manta De Paseo -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="cuna_para_bebe" id="check-cuna_para_bebe" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-cuna_para_bebe" id="label-cuna_para_bebe">
+            Cuña para Bebé
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('cuna')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-cuna_para_bebe">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-cuna_para_bebe" max="2" min="0"
+            name="cuna_para_bebe" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-cuna_para_bebe">2 restantes</span>
+        </div>
+      </div>
+      <!-- Mantillas De Tela -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="mantillas_de_tela" id="check-mantillas_de_tela" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-mantillas_de_tela" id="label-mantillas_de_tela">
+            Mantillas de Tela
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('mantillas')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-mantillas_de_tela">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-mantillas_de_tela" max="4" min="0"
+            name="mantillas_de_tela" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-mantillas_de_tela">4 restantes</span>
+        </div>
+      </div>
+      <!-- Mordedores -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="mordedores" id="check-mordedores" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-mordedores" id="label-mordedores">
+            Mordedores
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('mordedores')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-mordedores">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-mordedores" max="5" min="0"
+            name="mordedores" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-mordedores">5 restantes</span>
+        </div>
+      </div>
+      <!-- Móvil -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="móvil" id="check-móvil" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-móvil" id="label-móvil">
+            Móvil
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('movil')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-móvil">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-móvil" max="1" min="0"
+            name="móvil" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-móvil">1 restantes</span>
+        </div>
+      </div>
+      <!-- Paño De Baño -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="paño_de_baño" id="check-paño_de_baño" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-paño_de_baño" id="label-paño_de_baño">
+            Paño de Baño
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('pano')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-paño_de_baño">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-paño_de_baño" max="4" min="0"
+            name="paño_de_baño" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-paño_de_baño">4 restantes</span>
+        </div>
+      </div>
+      <!-- Pijamas 0-3 Meses -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="pijamas_0-3_meses" id="check-pijamas_0-3_meses" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-pijamas_0-3_meses" id="label-pijamas_0-3_meses">
+            Pijamas 0-3 Meses
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('pijama03')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-pijamas_0-3_meses">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-pijamas_0-3_meses" max="3" min="0"
+            name="pijamas_0-3_meses" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-pijamas_0-3_meses">3 restantes</span>
+        </div>
+      </div>
+      <!-- Pijamas 3-6 Meses -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="pijamas_3-6_meses" id="check-pijamas_3-6_meses" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-pijamas_3-6_meses" id="label-pijamas_3-6_meses">
+            Pijamas 3-6 Meses
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('pijama36')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-pijamas_3-6_meses">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-pijamas_3-6_meses" max="3" min="0"
+            name="pijamas_3-6_meses" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-pijamas_3-6_meses">3 restantes</span>
+        </div>
+      </div>
+      <!-- Pijamas 6-9 Meses -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="pijamas_6-9_meses" id="check-pijamas_6-9_meses" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-pijamas_6-9_meses" id="label-pijamas_6-9_meses">
+            Pijamas 6-9 Meses
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('pijama69')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-pijamas_6-9_meses">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-pijamas_6-9_meses" max="3" min="0"
+            name="pijamas_6-9_meses" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-pijamas_6-9_meses">3 restantes</span>
+        </div>
+      </div>
+      <!-- Pijamas 9-12 Meses -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="pijamas_9-12_meses" id="check-pijamas_9-12_meses" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-pijamas_9-12_meses" id="label-pijamas_9-12_meses">
+            Pijamas 9-12 Meses
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('pijama912')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-pijamas_9-12_meses">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-pijamas_9-12_meses" max="3" min="0"
+            name="pijamas_9-12_meses" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-pijamas_9-12_meses">3 restantes</span>
+        </div>
+      </div>
+      <!-- Plato Entrenador -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="plato_entrenador" id="check-plato_entrenador" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-plato_entrenador" id="label-plato_entrenador">
+            Plato Entrenador
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('plato')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-plato_entrenador">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-plato_entrenador" max="1" min="0"
+            name="plato_entrenador" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-plato_entrenador">1 restantes</span>
+        </div>
+      </div>
+      <!-- Portabebé Ergonómico -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="portabebé_ergonómico" id="check-portabebé_ergonómico" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-portabebé_ergonómico" id="label-portabebé_ergonómico">
+            Portabebé Ergonómico
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('portabebe')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-portabebé_ergonómico">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-portabebé_ergonómico" max="1" min="0"
+            name="portabebé_ergonómico" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-portabebé_ergonómico">1 restantes</span>
+        </div>
+      </div>
+      <!-- Protector De Colchón Bebé/ Impermeable -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="protector_de_colchón_bebé_impermeable" id="check-protector_de_colchón_bebé_impermeable" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-protector_de_colchón_bebé_impermeable" id="label-protector_de_colchón_bebé_impermeable">
+            Protector de Colchón Bebé/ Impermeable
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('impermeable')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-protector_de_colchón_bebé_impermeable">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-protector_de_colchón_bebé_impermeable" max="4" min="0"
+            name="protector_de_colchón_bebé_impermeable" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-protector_de_colchón_bebé_impermeable">4 restantes</span>
+        </div>
+      </div>
+      <!-- Regadera De Mano Para Baño -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="regadera_de_mano_para_baño" id="check-regadera_de_mano_para_baño" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-regadera_de_mano_para_baño" id="label-regadera_de_mano_para_baño">
+            Regadera de Mano para Baño
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('regadera')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-regadera_de_mano_para_baño">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-regadera_de_mano_para_baño" max="1" min="0"
+            name="regadera_de_mano_para_baño" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-regadera_de_mano_para_baño">1 restantes</span>
+        </div>
+      </div>
+      <!-- Silla Para Comer -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="silla_para_comer" id="check-silla_para_comer" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-silla_para_comer" id="label-silla_para_comer">
+            Silla para Comer
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('silla_comer')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-silla_para_comer">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-silla_para_comer" max="1" min="0"
+            name="silla_para_comer" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-silla_para_comer">1 restantes</span>
+        </div>
+      </div>
+      <!-- Silla Para El Auto -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="silla_para_el_auto" id="check-silla_para_el_auto" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-silla_para_el_auto" id="label-silla_para_el_auto">
+            Silla para Auto
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('silla_auto')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-silla_para_el_auto">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-silla_para_el_auto" max="1" min="0"
+            name="silla_para_el_auto" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-silla_para_el_auto">1 restantes</span>
+        </div>
+      </div>
+      <!-- Sábanas Ajustables Para Colchón Bebé -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="sábanas_ajustables_para_colchón_bebé" id="check-sábanas_ajustables_para_colchón_bebé" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-sábanas_ajustables_para_colchón_bebé" id="label-sábanas_ajustables_para_colchón_bebé">
+            Sábanas Ajustables para Colchón Bebé
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('sabana_ajustable')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-sábanas_ajustables_para_colchón_bebé">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-sábanas_ajustables_para_colchón_bebé" max="4" min="0"
+            name="sábanas_ajustables_para_colchón_bebé" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-sábanas_ajustables_para_colchón_bebé">4 restantes</span>
+        </div>
+      </div>
+      <!-- Termómetro Infantil -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="termómetro_infantil" id="check-termómetro_infantil" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-termómetro_infantil" id="label-termómetro_infantil">
+            Termómetro Infantil
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('termometro')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-termómetro_infantil">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-termómetro_infantil" max="1" min="0"
+            name="termómetro_infantil" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-termómetro_infantil">1 restantes</span>
+        </div>
+      </div>
+      <!-- Tina Para Bebé Con Termómetro -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="tina_para_bebé_con_termómetro" id="check-tina_para_bebé_con_termómetro" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-tina_para_bebé_con_termómetro" id="label-tina_para_bebé_con_termómetro">
+            Tina para Bebé con Termómetro
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('tina')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-tina_para_bebé_con_termómetro">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-tina_para_bebé_con_termómetro" max="1" min="0"
+            name="tina_para_bebé_con_termómetro" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-tina_para_bebé_con_termómetro">1 restantes</span>
+        </div>
+      </div>   
+          
+      <!-- Aceite Mennen -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="aceite_mennen" id="check-aceite_mennen" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-aceite_mennen" id="label-aceite_mennen">
+            Aceite Mennen
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('aceite')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+          
+        <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
+        <div class="flex items-center gap-3 hidden" id="input-wrapper-aceite_mennen">
+          <input class="w-16 px-2 py-1 border rounded"
+            id="input-aceite_mennen" max="5" min="0"
+            name="aceite_mennen" type="number" value="0"/>
+          <span class="text-sm text-gray-500" id="stock-aceite_mennen">5 restantes</span>
+        </div>
+      </div>
+
+      <!-- Pañales -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="panales" id="check-panales" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-panales" id="label-panales">
+            Pañales
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('panales')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+      </div>
+
+      <!-- Toallitas Humedas -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="toallitas" id="check-toallitas" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-toallitas" id="label-toallitas">
+            Toallitas Húmedas
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('toallitas')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+      </div>      
+
+      <!-- Dinero en Efectivo -->
+      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+        <!-- Checkbox + nombre -->
+        <div class="flex items-center space-x-2">
+          <input class="scale-125" data-key="dinero" id="check-dinero" type="checkbox" />
+          <label class="text-[#5a673b] font-medium" for="check-dinero" id="label-dinero">
+            Dinero en Efectivo/Sinpe
+          </label>
+        </div>
+          
+        <!-- Botón siempre visible -->
+        <div class="flex items-center">
+          <button 
+            type="button" onclick="mostrarImagen('dinero')" 
+            class="px-3 py-1 rounded text-sm font-semibold text-white"
+            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+            onmouseover="this.style.backgroundColor='#5a673b';"
+            onmouseout="this.style.backgroundColor='#a7b67a';">
+            Ver ejemplo
+          </button>
+        </div>
+      </div>  
+
+          
+      </form>
+        
+      <!-- Botón de enviar confirmación dentro del recuadro -->
+      <button class="mt-6 bg-[#dc9f92] hover:bg-[#ebc7ad] text-white px-4 py-2 rounded w-full" type="submit" form="giftForm">
+        Enviar confirmación
+      </button>
+        
+      <!-- Mensaje de agradecimiento oculto -->
+      <div class="hidden mt-6 text-[#8e7f57] text-lg font-semibold text-center" id="agradecimiento">
+        ¡Gracias por elegir un regalito! 🐵 Redirigiendo...
+      </div>
+  </div>
+
+
+
+
+
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"][data-key]');
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+          const key = this.dataset.key;
+          const inputWrap = document.getElementById(`input-wrapper-${key}`);
+          const input = document.getElementById(`input-${key}`);
+          if (this.checked) {
+            inputWrap.classList.remove("hidden");
+          } else {
+            inputWrap.classList.add("hidden");
+            input.value = 0;
+          }
+        });
+      });
+
+      const stock = {
+        "chupones_anticólicos": 3, "esterilizador_de_chupones": 1, "calentador_de_chupones": 1, "cepillo_para_lavar_chupones": 2, "baberos_impermeables": 3, "beberito": 2, "cubiertos_de_entrenamiento_silicón": 1, "silla_para_comer": 1, "contenedor_de_fórmula": 2, "plato_entrenador": 1, "almohada_de_lactancia": 1, "escurridor_de_chupones": 1, "bodies__mameluco_de_algodón_0-3_meses": 3, "bodies__mameluco_de_algodón_3-6_meses": 3, "bodies__mameluco_de_algodón_6-9_meses": 3, "bodies__mameluco_de_algodón_9-12_meses": 3, "pijamas_0-3_meses": 3, "pijamas_3-6_meses": 3, "pijamas_6-9_meses": 3, "pijamas_9-12_meses": 3, "cobijitas_antialérgicas": 4, "gorritos_y_medias": 4, "mantillas_de_tela": 4, "pano_de_bano": 4, "tina_para_bebé_con_termómetro": 1, "aspirador_nasal": 2, "regadera_de_mano_para_bano": 1, "esponja_de_bano_bebé": 3, "crema_para_panal": 10, "guante_para_banar_bebé": 2, "esponja_para_tina": 2, "kit_de_aseo_bebé": 2, "móvil": 1, "sábanas_ajustables_para_colchón_bebé": 4, "protector_de_colchón_bebé__impermeable": 4, "mordedores": 5, "coche": 1, "portabebé_ergonómico": 1, "silla_para_el_auto": 1, "manta_de_paseo": 2, "termómetro_infantil": 1, "almohada_maternidad": 1, "aceite_menen": 5, "fular_elástico": 2
+      };
+
+      const form = document.getElementById("giftForm");
+      const agradecimiento = document.getElementById("agradecimiento");
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const timestamp = new Date().toISOString();
+        let datosParaEnviar = [];
+
+        for (let [key, value] of data.entries()) {
+          if (stock.hasOwnProperty(key)) {
+            const cantidad = parseInt(value);
+            if (cantidad > 0 && stock[key] >= cantidad) {
+              stock[key] -= cantidad;
+              document.getElementById(`stock-${key}`).textContent = stock[key] > 0
+                ? `${stock[key]} restantes`
+                : `agotado`;
+
+              if (stock[key] === 0) {
+                document.getElementById(`input-${key}`).disabled = true;
+                document.getElementById(`label-${key}`).classList.add("line-through", "text-gray-400");
+              }
+              datosParaEnviar.push({ regalo: key, cantidad: cantidad, timestamp: timestamp });
+            }
+          } else {
+            datosParaEnviar.push({ regalo: key, cantidad: 1, timestamp: timestamp });
+          }
+        }
+
+        datosParaEnviar.forEach(item => {
+          const formData = new FormData();
+          formData.append("regalo", item.regalo);
+          formData.append("cantidad", item.cantidad);
+          formData.append("timestamp", item.timestamp);
+
+          fetch("https://script.google.com/macros/s/TU_SCRIPT_ID/exec", {
+            method: "POST",
+            body: formData
+          });
+        });
+
+        form.classList.add("hidden");
+        agradecimiento.classList.remove("hidden");
+
+        setTimeout(() => {
+          window.location.href = "index.html#seccion-regalos";
+        }, 3500);
+      });
+    });
+  </script>
+  <!-- Modal para mostrar imágenes -->
+  <div class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" id="modal">
+   <div class="bg-white rounded-lg p-4 max-w-sm w-full relative transform scale-90 opacity-0 transition-all duration-300 ease-out" id="modal-content">
+    <!-- Botón cerrar -->
+    <button class="absolute top-2 right-3 text-[#dc9f92] hover:text-red-500 font-bold text-xl" onclick="cerrarModal()">
+     ✖
+    </button>
+    <!-- Imagen mostrada -->
+    <img alt="Ejemplo de regalo" class="w-full h-auto rounded shadow-md" id="modal-img" src=""/>
+   </div>
+  </div>
+  <script>
+function mostrarImagen(nombreBase) {
+  const modal = document.getElementById("modal");
+  const content = document.getElementById("modal-content");
+  const img = document.getElementById("modal-img");
+
+  const extensiones = ['webp', 'jpg', 'jpeg', 'png', 'avif'];
+  let encontrada = false;
+
+  for (const ext of extensiones) {
+    const ruta = `imagenes/${nombreBase}.${ext}`;
+    const testImg = new Image();
+    testImg.src = ruta;
+
+    testImg.onload = function () {
+      if (!encontrada) {
+        encontrada = true;
+        img.src = ruta;
+        modal.classList.remove("hidden");
+
+        void content.offsetWidth;
+        content.classList.remove("scale-90", "opacity-0");
+        content.classList.add("scale-100", "opacity-100");
+      }
+    };
+  }
+}
+
+  function cerrarModal() {
+    const modal = document.getElementById("modal");
+    const content = document.getElementById("modal-content");
+
+    // Animación de cierre
+    content.classList.remove("scale-100", "opacity-100");
+    content.classList.add("scale-90", "opacity-0");
+
+    // Esperar a que termine la animación para ocultar el modal
+    setTimeout(() => {
+      modal.classList.add("hidden");
+      document.getElementById("modal-img").src = "";
+    }, 300);
+  }
+  </script>
+ </body>
+</html>
