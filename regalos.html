@@ -9,7 +9,12 @@
   <script src="https://cdn.tailwindcss.com">
   </script>
   <style>
-   body { background-color: #f1eddc; font-family: 'Arial', sans-serif; }
+   body { background-color: #f1eddc;
+  background-image: url('fondo 2.png'); /* Asegurate de que el archivo esté en la misma carpeta */
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  font-family: 'Arial', sans-serif; }
   </style>
  </head>
  <body class="flex flex-col items-center justify-center min-h-screen p-4">
@@ -23,6 +28,7 @@
   </button>
   </div>
 
+    <div id="encabezado-regalos">
      <section class="text-center mb-6">
     <h2 class="text-3xl font-bold text-gray-800 mb-2">Ideas de Regalo</h2>
     <p class="text-gray-600 max-w-2xl mx-auto">
@@ -36,6 +42,8 @@
    <h1 class="text-4x3 font-bold text-[#8e7f57] mb-6">
     Podés elegir uno o más regalitos
    </h1>
+   </div>
+
     <!-- Formulario de regalos -->
     <form class="space-y-4 text-left" id="giftForm" method="POST" action="https://script.google.com/macros/s/AKfycbwKqsY7wIl_TwWoNwmOr2OusrIPK4JItBh5izi4ZiBmVx8jmXiJSW92Kb_39yJKG8kr/exec">
         <!-- Chupones Anticólicos -->
@@ -1436,15 +1444,21 @@
           
       </form>
         
-      <!-- Botón de enviar confirmación dentro del recuadro -->
-      <button class="mt-6 bg-[#dc9f92] hover:bg-[#ebc7ad] text-white px-4 py-2 rounded w-full" type="submit" form="giftForm">
-        Enviar confirmación
-      </button>
-        
-      <!-- Mensaje de agradecimiento oculto -->
-      <div class="hidden mt-6 text-[#8e7f57] text-lg font-semibold text-center" id="agradecimiento">
-        ¡Gracias por elegir un regalito! 🐵 Redirigiendo...
-      </div>
+        <!-- Botón de enviar confirmación dentro del recuadro -->
+        <button id="btnEnviar" class="mt-6 bg-[#dc9f92] hover:bg-[#ebc7ad] text-white px-4 py-2 rounded w-full" type="submit" form="giftForm">
+          Enviar confirmación
+        </button>
+
+        <!-- Estado de envío -->
+        <div id="enviando" class="hidden flex flex-col items-center mt-6 text-center animate-pulse">
+          <p class="text-[#8e7f57] text-lg font-semibold mb-2">Enviando tu confirmación...</p>
+          <img src="Peresoza__Regalo_1.png" alt="Perezosa enviando" class="w-32 h-auto animate-bounce"/>
+        </div>
+
+        <!-- Mensaje de agradecimiento oculto -->
+        <div class="hidden mt-6 text-[#8e7f57] text-lg font-semibold text-center" id="agradecimiento">
+          ¡Gracias por elegir un regalito!  Redirigiendo...
+        </div>
   </div>
 
 
@@ -1500,6 +1514,7 @@
         const data = new FormData(form);
         const timestamp = new Date().toISOString();
         let datosParaEnviar = [];
+        console.log("Se hizo submit correctamente");
 
         for (let [key, value] of data.entries()) {
           if (stock.hasOwnProperty(key)) {
@@ -1533,12 +1548,22 @@
           });
         });
 
+
+        document.getElementById("encabezado-regalos").classList.add("hidden");
+        document.getElementById("btnEnviar").classList.add("hidden");
+
+
         form.classList.add("hidden");
-        agradecimiento.classList.remove("hidden");
+        document.getElementById("enviando").classList.remove("hidden");
+
+        setTimeout(() => {
+          document.getElementById("enviando").classList.add("hidden");
+          agradecimiento.classList.remove("hidden");
+        }, 3500); // Muestra la perezosa durante 1.5 segundos antes del agradecimiento;
 
         setTimeout(() => {
           window.location.href = "index.html#seccion-regalos";
-        }, 3500);
+        }, 5500);
       });
     });
   </script>
