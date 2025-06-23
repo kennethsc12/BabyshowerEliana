@@ -1419,27 +1419,31 @@
       </div>      
 
       <!-- Dinero en Efectivo -->
-      <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
+      <div class="flex flex-col w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
         <!-- Checkbox + nombre -->
-        <div class="flex items-center space-x-2">
-          <input class="scale-125" name="regalo" data-key="dinero" id="check-dinero" type="checkbox" />
-          <label class="text-[#5a673b] font-medium" for="check-dinero" id="label-dinero">
-            Dinero en Efectivo/Sinpe
-          </label>
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center space-x-2">
+            <input class="scale-125" name="regalo" data-key="dinero" id="check-dinero" type="checkbox" />
+            <label class="text-[#5a673b] font-medium" for="check-dinero" id="label-dinero">
+              Dinero en Efectivo/Sinpe
+            </label>
+          </div>
+
+          <!-- Botón siempre visible -->
+          <div class="flex items-center">
+            <button 
+              type="button" onclick="mostrarImagen('dinero')" 
+              class="px-3 py-1 rounded text-sm font-semibold text-white"
+              style="background-color: #a7b67a; transition: background-color 0.2s ease;"
+              onmouseover="this.style.backgroundColor='#5a673b';"
+              onmouseout="this.style.backgroundColor='#a7b67a';">
+              Ver Información
+            </button>
+          </div>
         </div>
-          
-        <!-- Botón siempre visible -->
-        <div class="flex items-center">
-          <button 
-            type="button" onclick="mostrarImagen('dinero')" 
-            class="px-3 py-1 rounded text-sm font-semibold text-white"
-            style="background-color: #a7b67a; transition: background-color 0.2s ease;"
-            onmouseover="this.style.backgroundColor='#5a673b';"
-            onmouseout="this.style.backgroundColor='#a7b67a';">
-            Ver ejemplo
-          </button>
-        </div>
-      </div>  
+
+
+      </div>
 
           
       </form>
@@ -1576,6 +1580,12 @@
     </button>
     <!-- Imagen mostrada -->
     <img alt="Ejemplo de regalo" class="w-full h-auto rounded shadow-md" id="modal-img" src=""/>
+      <div id="modal-texto" class="hidden text-sm text-[#5a673b] text-center leading-relaxed mt-2">
+      <strong>Sinpe Móvil</strong><br>
+      Nombre: Kenneth Salas Cruz<br>
+      Número: 8799 6111
+    </div>
+
    </div>
   </div>
   <script>
@@ -1583,6 +1593,7 @@ function mostrarImagen(nombreBase) {
   const modal = document.getElementById("modal");
   const content = document.getElementById("modal-content");
   const img = document.getElementById("modal-img");
+  const texto = document.getElementById("modal-texto");
 
   const extensiones = ['webp', 'jpg', 'jpeg', 'png', 'avif'];
   let encontrada = false;
@@ -1597,6 +1608,13 @@ function mostrarImagen(nombreBase) {
         encontrada = true;
         img.src = ruta;
         modal.classList.remove("hidden");
+
+        // Mostrar texto solo si es imagen de dinero
+        if (nombreBase === "dinero") {
+          texto.classList.remove("hidden");
+        } else {
+          texto.classList.add("hidden");
+        }
 
         void content.offsetWidth;
         content.classList.remove("scale-90", "opacity-0");
