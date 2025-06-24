@@ -1513,61 +1513,39 @@
       const form = document.getElementById("giftForm");
       const agradecimiento = document.getElementById("agradecimiento");
 
-      form.addEventListener("submit", function(e) {
-        e.preventDefault();
-        const data = new FormData(form);
-        const timestamp = new Date().toISOString();
-        let datosParaEnviar = [];
-        console.log("Se hizo submit correctamente");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-        for (let [key, value] of data.entries()) {
-          if (stock.hasOwnProperty(key)) {
-            const cantidad = parseInt(value);
-            if (cantidad > 0 && stock[key] >= cantidad) {
-              stock[key] -= cantidad;
-              document.getElementById(`stock-${key}`).textContent = stock[key] > 0
-                ? `${stock[key]} restantes`
-                : `agotado`;
+  const data = new FormData(form);
+  const timestamp = new Date().toISOString();
+  const formData = new FormData();
 
-              if (stock[key] === 0) {
-                document.getElementById(`input-${key}`).disabled = true;
-                document.getElementById(`label-${key}`).classList.add("line-through", "text-gray-400");
-              }
-              datosParaEnviar.push({ regalo: key, cantidad: cantidad, timestamp: timestamp });
-            }
-          } else {
-            datosParaEnviar.push({ regalo: key, cantidad: 1, timestamp: timestamp });
-          }
-        }
+  for (let [key, value] of data.entries()) {
+    if (key.startsWith("cantidad_") && parseInt(value) > 0) {
+      formData.append(key, value);
+    }
+  }
 
-        datosParaEnviar.forEach(item => {
-          const formData = new FormData();
-          formData.append("regalo", item.regalo);
-          formData.append("cantidad", item.cantidad);
-          formData.append("timestamp", item.timestamp);
+  formData.append("timestamp", timestamp);
 
-          fetch("https://script.google.com/macros/s/AKfycbxjhCaSl8bQ6oV0lfz1_FI_eAf8j1vr7Hkc2Q-SW3ztyfoxbM4_s0-TuZun_8oIWQtv/exec", {
-            method: "POST",
-            body: formData
-          });
-        });
+  fetch("https://script.google.com/macros/s/AKfycbxjhCaSl8bQ6oV0lfz1_FI_eAf8j1vr7Hkc2Q-SW3ztyfoxbM4_s0-TuZun_8oIWQtv/exec", {
+    method: "POST",
+    body: formData
+  })
+    .then(() => {
+      document.getElementById("encabezado-regalos").classList.add("hidden");
+      document.getElementById("btnEnviar").classList.add("hidden");
+      form.classList.add("hidden");
+      document.getElementById("enviando").classList.remove("hidden");
 
+      setTimeout(() => {
+        document.getElementById("enviando").classList.add("hidden");
+        agradecimiento.classList.remove("hidden");
+      }, 3500);
 
-        document.getElementById("encabezado-regalos").classList.add("hidden");
-        document.getElementById("btnEnviar").classList.add("hidden");
-
-
-        form.classList.add("hidden");
-        document.getElementById("enviando").classList.remove("hidden");
-
-        setTimeout(() => {
-          document.getElementById("enviando").classList.add("hidden");
-          agradecimiento.classList.remove("hidden");
-        }, 3500); // Muestra la perezosa durante 1.5 segundos antes del agradecimiento;
-
-        setTimeout(() => {
-          window.location.href = "index.html#seccion-regalos";
-        }, 5500);
+      setTimeout(() => {
+        window.location.href = "index.html#seccion-regalos";
+      }, 5500);
       });
     });
   </script>
