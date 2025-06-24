@@ -45,7 +45,7 @@
    </div>
 
     <!-- Formulario de regalos -->
-    <form class="space-y-4 text-left" id="giftForm" method="POST" action="https://script.google.com/macros/s/AKfycbwKqsY7wIl_TwWoNwmOr2OusrIPK4JItBh5izi4ZiBmVx8jmXiJSW92Kb_39yJKG8kr/exec">
+    <form class="space-y-4 text-left" id="giftForm" method="POST" action="https://script.google.com/macros/s/AKfycbxjhCaSl8bQ6oV0lfz1_FI_eAf8j1vr7Hkc2Q-SW3ztyfoxbM4_s0-TuZun_8oIWQtv/exec">
         <!-- Chupones Anticólicos -->
         <div class="flex items-center justify-between w-full p-3 mb-2 rounded-xl shadow-sm border border-[#d0caa9] bg-white">
           <!-- Checkbox + nombre -->
@@ -1488,7 +1488,7 @@
 
       let stock = {};
 
-      fetch("https://script.google.com/macros/s/AKfycbwKqsY7wIl_TwWoNwmOr2OusrIPK4JItBh5izi4ZiBmVx8jmXiJSW92Kb_39yJKG8kr/exec") // 👈 remplaza por tu ID real
+      fetch("https://script.google.com/macros/s/AKfycbxjhCaSl8bQ6oV0lfz1_FI_eAf8j1vr7Hkc2Q-SW3ztyfoxbM4_s0-TuZun_8oIWQtv/exec") // 👈 remplaza por tu ID real
         .then(res => res.json())
         .then(data => {
           stock = data;
@@ -1546,7 +1546,7 @@
           formData.append("cantidad", item.cantidad);
           formData.append("timestamp", item.timestamp);
 
-          fetch("https://script.google.com/macros/s/AKfycbwKqsY7wIl_TwWoNwmOr2OusrIPK4JItBh5izi4ZiBmVx8jmXiJSW92Kb_39yJKG8kr/exec", {
+          fetch("https://script.google.com/macros/s/AKfycbxjhCaSl8bQ6oV0lfz1_FI_eAf8j1vr7Hkc2Q-SW3ztyfoxbM4_s0-TuZun_8oIWQtv/exec", {
             method: "POST",
             body: formData
           });
