@@ -441,13 +441,29 @@
             </div>
             
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-12">
-                <a href="https://calendar.google.com/calendar/ical/6efbf2d972aac39f356ac8f18be4d3e018320839ab935006323474a15a70d3d6%40group.calendar.google.com/private-5cbcdfd6ed9e8cfa8e4a0e7f87ffa77c/basic.ics" target="_blank" class="btn-primary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
+                <div id="mapaContainer" class="w-full max-w-3xl mx-auto mt-6 hidden transform scale-90 transition-transform duration-500 ease-in-out relative">
+                
+                <!-- Botón de cerrar -->
+                <button onclick="cerrarMapa()"
+                    class="absolute top-2 right-2 text-white bg-[#5a673b] hover:bg-[#8e7f57] rounded-full w-8 h-8 flex items-center justify-center shadow-lg z-10">
+                    ✕
+                </button>
+
+                <!-- Mapa embebido -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3930.6400841616923!2d-84.6695739!3d9.9919179!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwNTknMzAuOSJOIDg0wrA0MCcxMi40Ilc!5e0!3m2!1ses-419!2scr!4v1719257264910!5m2!1ses-419!2scr"
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    class="rounded-lg shadow-lg w-full h-[350px]">
+                </iframe>
+                </div>
+
+                <a href="https://calendar.google.com/calendar/ical/6efbf2d972aac39f356ac8f18be4d3e018320839ab935006323474a15a70d3d6%40group.calendar.google.com/private-5cbcdfd6ed9e8cfa8e4a0e7f87ffa77c/basic.ics"  class="btn-primary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
                     <i class="fas fa-calendar-plus mr-2"></i> Agendar Evento
                 </a>
                 
-                <a href="https://maps.app.goo.gl/WZKwy8SnpfedyXm56" target="_blank" class="btn-secondary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
+                <button onclick="mostrarMapa()" class="btn-secondary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
                     <i class="fas fa-map-marked-alt mr-2"></i> Ver Ubicación
-                </a>
+                </button>
                 
                 <a href="confirmacion.html" class="btn-primary px-6 py-3 rounded-full flex items-center justify-center text-lg font-medium">
                     <i class="fas fa-check-circle mr-2"></i> Confirmar Asistencia
@@ -730,6 +746,24 @@ function enviarFormulario(estado) {
   .catch(() => {
     alert("Hubo un error al enviar tu confirmación. Intentá de nuevo.");
   });
+}
+</script>
+
+<script>
+function mostrarMapa() {
+  const mapa = document.getElementById("mapaContainer");
+  mapa.classList.remove("hidden");
+  setTimeout(() => {
+    mapa.classList.add("scale-100");
+  }, 10);
+}
+</script>
+
+<script>
+function cerrarMapa() {
+  const mapa = document.getElementById("mapaContainer");
+  mapa.classList.add("hidden");
+  mapa.classList.remove("scale-100");
 }
 </script>
 </body>
