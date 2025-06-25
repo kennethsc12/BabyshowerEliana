@@ -1452,11 +1452,11 @@
           }
         }
 
+        const formData = new FormData();
         datosParaEnviar.forEach(item => {
-          const formData = new FormData();
           formData.append("regalo", item.regalo);
-          formData.append("cantidad", item.cantidad);
-          formData.append("timestamp", item.timestamp);
+          formData.append("cantidad_" + item.regalo, item.cantidad);
+        });
 
           fetch("https://script.google.com/macros/s/AKfycbxltskLLmvWfC8WBj4sfDmxrBQIXj5iHS_Re-WKxiieN3wxWa0H72ndky7wBfiMdd_2/exec", {
             method: "POST",
