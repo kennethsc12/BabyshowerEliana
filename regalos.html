@@ -69,7 +69,7 @@
           </div>
             
           <!-- Cantidad (inicialmente oculta si querés usar lógica JS) -->
-          <div class="flex items-center gap-3 hidden" id="input-wrapper-chupones_anticólicos">
+          <div class="flex items-center gap-3 hidden" id="input-wrapper-chupones_anticolicos">
 
             <span class="text-sm text-gray-500" id="stock-chupones_anticolicos">3 restantes</span>
           </div>
@@ -1373,7 +1373,9 @@
 
         <!-- Mensaje de agradecimiento oculto -->
         <div class="hidden mt-6 text-[#8e7f57] text-lg font-semibold text-center" id="agradecimiento">
-          ¡Gracias por elegir un regalito!  Redirigiendo...
+          ¡Gracias por elegir un regalito! 
+          <img src="Perezosa_feliz.png" alt="Perezosa enviando" class="w-40 h-auto animate-bounce mx-auto mt-4"/>
+          
         </div>
   </div>
 
@@ -1432,24 +1434,24 @@
         let datosParaEnviar = [];
         console.log("Se hizo submit correctamente");
 
-        for (let [key, value] of data.entries()) {
-          if (stock.hasOwnProperty(key)) {
-            const cantidad = parseInt(value);
-            if (cantidad > 0 && stock[key] >= cantidad) {
-              stock[key] -= cantidad;
-              document.getElementById(`stock-${key}`).textContent = stock[key] > 0
-                ? `${stock[key]} restantes`
+        const regalosMarcados = data.getAll("regalo");
+        for (let regalo of regalosMarcados) {
+          if (stock.hasOwnProperty(regalo)) {
+            stock[regalo] -= 1;
+            const stockSpan = document.getElementById(`stock-${regalo}`);
+            if (stockSpan) {
+              stockSpan.textContent = stock[regalo] > 0
+                ? `${stock[regalo]} restantes`
                 : `agotado`;
-
-              if (stock[key] === 0) {
-                document.getElementById(`input-${key}`).disabled = true;
-                document.getElementById(`label-${key}`).classList.add("line-through", "text-gray-400");
-              }
-              datosParaEnviar.push({ regalo: key, cantidad: cantidad, timestamp: timestamp });
             }
-          } else {
-            datosParaEnviar.push({ regalo: key, cantidad: 1, timestamp: timestamp });
+
+            const label = document.getElementById(`label-${regalo}`);
+            if (label && stock[regalo] === 0) {
+              label.classList.add("line-through", "text-gray-400");
+            }
           }
+
+          datosParaEnviar.push({ regalo: regalo, cantidad: 1, timestamp: timestamp });
         }
 
         const formData = new FormData();
@@ -1458,28 +1460,28 @@
           formData.append("cantidad_" + item.regalo, item.cantidad);
         });
 
-          fetch("https://script.google.com/macros/s/AKfycbxltskLLmvWfC8WBj4sfDmxrBQIXj5iHS_Re-WKxiieN3wxWa0H72ndky7wBfiMdd_2/exec", {
-            method: "POST",
-            body: formData
-          });
+        fetch("https://script.google.com/macros/s/AKfycbxltskLLmvWfC8WBj4sfDmxrBQIXj5iHS_Re-WKxiieN3wxWa0H72ndky7wBfiMdd_2/exec", {
+          method: "POST",
+          body: formData
         });
 
-
+        
         document.getElementById("encabezado-regalos").classList.add("hidden");
         document.getElementById("btnEnviar").classList.add("hidden");
-
-
         form.classList.add("hidden");
         document.getElementById("enviando").classList.remove("hidden");
 
         setTimeout(() => {
           document.getElementById("enviando").classList.add("hidden");
           agradecimiento.classList.remove("hidden");
-        }, 3500); // Muestra la perezosa durante 1.5 segundos antes del agradecimiento;
+        }, 3500);
 
-        setTimeout(() => {
-          window.location.href = "index.html#seccion-regalos";
-        }, 5500);
+        // setTimeout(() => {
+        //   window.location.href = "index.html#seccion-regalos";
+        // }, 5500);
+      });
+       });
+
       ;
     
   </script>
