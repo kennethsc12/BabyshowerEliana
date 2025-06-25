@@ -1411,22 +1411,25 @@
           Object.keys(stock).forEach(key => {
             const cantidad = stock[key];
             const span = document.getElementById(`stock-${key}`);
+            const input = document.getElementById(`input-${key}`);
             const label = document.getElementById(`label-${key}`);
-            const checkbox = document.querySelector(`input[data-key="${key}"]`);
+            const checkbox = document.getElementById(`check-${key}`);
 
-            if (span) {
-              span.textContent = cantidad > 0 ? `${cantidad} restantes` : 'agotado';
-
-              // Solo mostrar si el checkbox está activo
-              if (checkbox?.checked) {
-                span.classList.remove("hidden");
-              } else {
-                span.classList.add("hidden");
-              }
+            // ✅ Mostrar cantidad solo si está activo
+            if (span && checkbox.checked) {
+              span.classList.remove("hidden");
+              span.textContent = cantidad > 0 ? `${cantidad} restantes` : "agotado";
+            } else if (span) {
+              span.classList.add("hidden");
             }
 
+            // ✅ Línea y deshabilitar si está agotado
             if (label && cantidad <= 0) {
               label.classList.add("line-through", "text-gray-400");
+            }
+
+            if (checkbox) {
+              checkbox.disabled = cantidad <= 0;
             }
           });
         }
