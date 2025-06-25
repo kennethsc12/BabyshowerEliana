@@ -1456,7 +1456,9 @@
 
         const formData = new FormData();
         datosParaEnviar.forEach(item => {
-          formData.append("regalo", item.regalo);
+            console.log("item.regalo:", item.regalo);
+            console.log("item.cantidad:", item.cantidad);
+          // formData.append("regalo", item.regalo);
           formData.append("cantidad_" + item.regalo, item.cantidad);
         });
 
