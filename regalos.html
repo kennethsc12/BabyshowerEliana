@@ -1384,6 +1384,7 @@
 
 
   <script>
+
    document.addEventListener("DOMContentLoaded", function () {
       const checkboxes = document.querySelectorAll('input[type="checkbox"][data-key]');
       checkboxes.forEach(checkbox => {
@@ -1401,6 +1402,23 @@
       });
 
       let stock = {};
+      function actualizarStockVisual() {
+        Object.keys(stock).forEach(key => {
+          const cantidad = stock[key];
+          const span = document.getElementById(`stock-${key}`);
+          const input = document.getElementById(`input-${key}`);
+          const label = document.getElementById(`label-${key}`);
+
+          if (span) {
+            span.textContent = cantidad > 0 ? `${cantidad} restantes` : "agotado";
+          }
+
+          if (input && cantidad <= 0) input.disabled = true;
+          if (label && cantidad <= 0) label.classList.add("line-through", "text-gray-400");
+        });
+      }
+
+
 
       fetch("https://script.google.com/macros/s/AKfycbxltskLLmvWfC8WBj4sfDmxrBQIXj5iHS_Re-WKxiieN3wxWa0H72ndky7wBfiMdd_2/exec") // 👈 remplaza por tu ID real
         .then(res => res.json())
@@ -1453,6 +1471,8 @@
 
           datosParaEnviar.push({ regalo: regalo, cantidad: 1, timestamp: timestamp });
         }
+
+        actualizarStockVisual();
 
         const formData = new FormData();
         datosParaEnviar.forEach(item => {
