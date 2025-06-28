@@ -205,6 +205,73 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<audio id="musicaFondo" src="Canción.mp3" loop preload="auto"></audio>
+
+<button onclick="toggleMusic()" id="btnMusica"
+  class="fixed top-3 left-3 z-50 bg-[#a7b67a] text-white text-sm px-3 py-1.5 rounded-full shadow-md hover:shadow-lg transition-opacity duration-500"
+  title="Activar o pausar música">
+  🔇 
+</button>
+
+<script>
+  const musica = document.getElementById("musicaFondo");
+  const boton = document.getElementById("btnMusica");
+  musica.volume = 0;
+
+  function fadeIn(audio, target = 1, duration = 2000) {
+    const step = 0.01;
+    const interval = duration / (target / step);
+    const fade = setInterval(() => {
+      if (audio.volume < target) {
+        audio.volume = Math.min(audio.volume + step, target);
+      } else {
+        clearInterval(fade);
+      }
+    }, interval);
+  }
+
+  function fadeOut(audio, duration = 2000) {
+    const step = 0.01;
+    const interval = duration / (audio.volume / step);
+    const fade = setInterval(() => {
+      if (audio.volume > 0) {
+        audio.volume = Math.max(audio.volume - step, 0);
+      } else {
+        clearInterval(fade);
+        audio.pause();
+      }
+    }, interval);
+  }
+
+  function iniciarMusica() {
+    musica.play().then(() => {
+      fadeIn(musica);
+      boton.innerText = "🔊";
+    }).catch((e) => {
+      console.log("Autoplay bloqueado:", e);
+    });
+  }
+
+  window.addEventListener("click", iniciarMusica, { once: true });
+  window.addEventListener("touchstart", iniciarMusica, { once: true });
+
+  function toggleMusic() {
+    if (musica.paused) {
+      musica.volume = 0;
+      musica.play().then(() => fadeIn(musica));
+      boton.innerText = "🔊";
+    } else {
+      fadeOut(musica);
+      boton.innerText = "🔇";
+    }
+  }
+
+  window.addEventListener("scroll", () => {
+    boton.style.opacity = window.scrollY > 30 ? "0.4" : "1";
+  });
+</script>
+
+
 <!-- Aquí va el formulario completo -->
 <!-- Pega aquí el contenido del documento “Formulario Asistencia” que ya tenés listo -->
 
