@@ -300,6 +300,29 @@
             border: 2px solid #25D366;
             transform: translateY(-3px);
         }
+        @keyframes fondoFlotante {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            50% {
+                transform: translateY(-10px) translateX(5px);
+            }
+        }
+
+        #header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('cara.png');
+            background-size: 250px;
+            background-repeat: repeat;
+            background-position: center;
+            opacity: 0.68; /* Sutileza visual */
+            z-index: -1;
+            animation: fondoFlotante 20s ease-in-out infinite;
+            filter: blur(3px); /* 🎯 Desenfoque suave */
+        }
+
     </style>
 </head>
 <body>
@@ -313,7 +336,7 @@
     </div>
 
     <!-- Header Section -->
-    <section id="header" class="section min-h-screen flex items-center justify-center relative bg-cover bg-center" style="background-image: url('cara.png'); background-size: 150px;">
+    <section id="header" class="section min-h-screen flex items-center justify-center relative bg-cover bg-center">
         <!-- Decorative elements -->
         <div class="cloud cloud-1">
             <svg width="120" height="80" viewBox="0 0 120 80" fill="white" xmlns="http://www.w3.org/2000/svg">
