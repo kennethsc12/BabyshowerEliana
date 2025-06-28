@@ -639,36 +639,72 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94bc0772d43fc0a7',t:'MTc0OTI1NjEwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-<audio id="musicaFondo" src="Canción.mp3" loop preload="auto" autoplay></audio>
+<audio id="musicaFondo" src="Canción.mp3" loop preload="auto"></audio>
 
 <button onclick="toggleMusic()" id="btnMusica"
-  class="fixed top-3 left-3 z-50 bg-[#a7b67a] text-white text-sm px-3 py-1.5 rounded-full shadow-md hover:shadow-lg transition-opacity duration-500">
+  class="fixed top-3 left-3 z-50 bg-[#a7b67a] text-white text-sm px-3 py-1.5 rounded-full shadow-md hover:shadow-lg transition-opacity duration-500"
+  title="Activar o pausar música">
   🔇 
 </button>
 
 <script>
   const musica = document.getElementById("musicaFondo");
   const boton = document.getElementById("btnMusica");
+  musica.volume = 0;
+
+  function fadeIn(audio, target = 1, duration = 2000) {
+    const step = 0.01;
+    const interval = duration / (target / step);
+    const fade = setInterval(() => {
+      if (audio.volume < target) {
+        audio.volume = Math.min(audio.volume + step, target);
+      } else {
+        clearInterval(fade);
+      }
+    }, interval);
+  }
+
+  function fadeOut(audio, duration = 2000) {
+    const step = 0.01;
+    const interval = duration / (audio.volume / step);
+    const fade = setInterval(() => {
+      if (audio.volume > 0) {
+        audio.volume = Math.max(audio.volume - step, 0);
+      } else {
+        clearInterval(fade);
+        audio.pause();
+      }
+    }, interval);
+  }
+
+  function iniciarMusica() {
+    musica.play().then(() => {
+      fadeIn(musica);
+      boton.innerText = "🔊";
+    }).catch((e) => {
+      console.log("Autoplay bloqueado:", e);
+    });
+  }
+
+  window.addEventListener("click", iniciarMusica, { once: true });
+  window.addEventListener("touchstart", iniciarMusica, { once: true });
 
   function toggleMusic() {
     if (musica.paused) {
-      musica.play();
+      musica.volume = 0;
+      musica.play().then(() => fadeIn(musica));
       boton.innerText = "🔊";
     } else {
-      musica.pause();
+      fadeOut(musica);
       boton.innerText = "🔇";
     }
   }
-    // 👇 Efecto al hacer scroll
-    window.addEventListener("scroll", () => {
-    if (window.scrollY > 30) {
-      boton.style.opacity = "0.4";
-    } else {
-      boton.style.opacity = "1";
-    }
+
+  window.addEventListener("scroll", () => {
+    boton.style.opacity = window.scrollY > 30 ? "0.4" : "1";
   });
 </script>
+
 <script>
 const steps = {
   step1: document.getElementById("step-1"),
