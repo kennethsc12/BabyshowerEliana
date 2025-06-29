@@ -22,7 +22,8 @@
   <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-xl text-center">
     <div class="text-left mb-4">
   <button 
-    onclick="location.href='index.html#regalos'"
+    id="btn-volver"
+    onclick= "location.href='index.html#regalos'"
     class="bg-[#a7b67a] text-white px-2 py-1 rounded-full font-medium hover:bg-[#8e7f57] transition"  >
     ← Volver al inicio
   </button>
@@ -1282,9 +1283,13 @@
         </div>
 
         <!-- Mensaje de agradecimiento oculto -->
-        <div class="hidden mt-6 text-[#8e7f57] text-lg font-semibold text-center" id="agradecimiento">
+        <div                  
+          class="hidden mt-6 text-[#8e7f57] text-lg font-semibold text-center" id="agradecimiento">
           ¡Gracias por elegir un regalito! 
           <img src="Perezosa_feliz.png" alt="Perezosa enviando" class="w-40 h-auto animate-bounce mx-auto mt-4"/>
+          <button onclick="location.href='index.html#seccion-regalos'" class="mt-6 bg-[#a7b67a] text-white px-4 py-2 rounded-full font-medium hover:bg-[#8e7f57] transition">
+           ← Volver al inicio
+          </button>
           
         </div>
   </div>
@@ -1486,11 +1491,14 @@
           body: formData
         });
 
-        
+          // Ocultar el botón de volver
+        document.getElementById("btn-volver")?.classList.add("hidden");
+
         document.getElementById("encabezado-regalos").classList.add("hidden");
         document.getElementById("btnEnviar").classList.add("hidden");
         form.classList.add("hidden");
         document.getElementById("enviando").classList.remove("hidden");
+
 
         setTimeout(() => {
           document.getElementById("enviando").classList.add("hidden");
